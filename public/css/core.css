@@ -1,0 +1,35 @@
+.errormessagecolor {
+color: red;
+}
+.borderred {
+    border: red 2px solid;
+}
+/* blink marquee {
+    color: expression("rgb(" + Math.floor(Math.random() * 255)
+       + "," + Math.floor(Math.random() * 255) + ","
+       + Math.floor(Math.random() * 255) + ")");
+ } */
+.container2 {
+    position: relative;
+    text-align: center;
+}
+
+.centered2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red 2px solid;
+    display: block;
+    color: transparent;
+    font-size: 400%;
+}
+
+.centered2:first-letter{
+    color: red;
+}
+.text-center3{
+    display: flex;
+	justify-content: center;
+    color: white!important;
+}

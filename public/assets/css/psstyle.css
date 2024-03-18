@@ -1,0 +1,33 @@
+.border-red{
+    border: red 2px solid;
+}
+.margincardbuttom{
+    margin-bottom: 20px!Important;
+}
+.imageps{
+    border: transparent;
+    background-color: white!important; 
+    box-shadow: 10px 10px #888888;;
+}
+.text-right{
+    text-align: right!important;
+}
+.tablebg{
+    background-color: white!important;
+    color: black!important;
+    width: 100%!important;
+}
+/* Custom styling for DataTables entries per page dropdown */
+.custom-select {
+    /* Add your desired styles here */
+    color: black!important; /* Change the text color */
+    background-color: white!important; /* Change the background color */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+/* Hover effect for the dropdown */
+.custom-select:hover {
+    /* Add your desired hover styles here */
+    background-color: white; /* Change the background color on hover */
+    color: black; /* Change the text color on hover */
+}

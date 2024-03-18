@@ -1,0 +1,1190 @@
+body {
+    margin: 0;
+    height: calc(100% - 51px);
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    object-fit: contain;
+}
+
+html {
+height: 100%;
+}
+
+header.navbar {
+margin-bottom: 0px;
+}
+#btn-spin {
+    position: absolute;
+    left: 200px;
+    z-index: 10;
+    font-size: 1.5em;
+  }
+.help {
+    font-size: 1.5em;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+}
+.help a.sources {
+    float: left;
+    margin-left: 50px;
+    color: white;
+}
+.help a.logo {
+    float: right;
+}
+.help a.logo img {
+    height: 30px;
+}
+/* navigation */
+nav {
+    background-color: #333;
+    color: #fff;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+a {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #1c1b1b;
+}
+a:hover {
+    background-color: #555;
+}
+/* personal css */
+.border-red{
+    border: red 2px solid;
+}
+.floatright{
+    float: right!important;
+    text-align: right;
+}
+.bgnav{
+  background: rgba(245, 245, 245, 0.796);
+  /* box-shadow: 1px 1px 80px 1px rgb(25, 25, 25); */
+  /* border-radius:50px 50px; */
+}
+.navbar.transparent.navbar-inverse .navbar-inner {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+
+}
+
+  
+.overlay {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    text-align: center!important;
+    z-index: 1000; /* Ensure the button is above the map */
+
+
+}
+@font-face {
+    font-family: GidoleRegular;
+    src: url(../assets/fonts/GidoleRegular/Gidole-Regular.otf);
+ }
+.text-navconf{
+    font-family:  "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    margin-right: 20px!important;
+    letter-spacing: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 20px;
+    border-radius: 30px!important;
+
+    
+   
+}
+.text-nav2{
+    text-align: center!important;
+}
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+.active2nav{
+    background-color: #007bff;
+    border-radius: 30px;
+    color: white!important;
+    display: inline-block;
+    width: 90px;
+}
+/* .carousel-control-width{
+    height:auto;
+    max-height:100%;
+    overflow:auto;
+} 
+.headerfront {
+    height:auto;
+    max-height:100%;
+    overflow:hidden;
+    background: black;
+    width: 100%!important;
+}
+
+.coverimg {
+   object-fit: cover;
+   opacity: 0.4;
+} */
+/* .carouselcontent{
+    height: auto;
+    max-height:100%;
+} */
+/* .carousel-caption {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: red 2px solid;
+  } */
+  /* @charset "UTF-8"; */
+  body {
+    font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: #fef7ce;
+  }
+  body * {
+    box-sizing: border-box;
+  }
+  body .btn {
+    position: absolute;
+    z-index: 8;
+    width: 30px;
+    height: 30px;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    margin-top: 250px;
+    transition: 0.2s ease-in-out;
+    margin-left: 350px;
+  }
+  body input[type=radio] {
+    position: absolute;
+    z-index: 8;
+    width: 80px;
+    height: 80px;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    margin-top: 250px;
+    margin-left: 350px;
+  }
+  body input[type=radio]:hover ~ .btn {
+    box-shadow: 0 0 0 1px #000;
+  }
+  body input[type=radio]:hover ~ .btn:before {
+    border-top: 5px solid #000;
+    border-right: 5px solid #000;
+  }
+  body .btn {
+    box-shadow: 0 0 0 1px #fff;
+    z-index: 999;
+    pointer-events: none;
+    border-radius: 100%;
+  }
+  body .btn:before {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    left: 50%;
+    top: 50%;
+    transform: translateY(calc(-50% - 2.5px)) translateX(-50%) rotate(135deg);
+    transition: 0.2s ease-in-out;
+  }
+  body input {
+    opacity: 0;
+    z-index: 999;
+  }
+  
+  
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1):before, body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1) .label:before {
+    transform: translateY(0);
+  }
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(1) {
+    z-index: 9;
+  }
+  body input:nth-of-type(1):checked {
+    pointer-events: none;
+    opacity: 0;
+  }
+  body input:nth-of-type(1):checked + input {
+    z-index: 20;
+  }
+  body input:nth-of-type(1):checked ~ #wrap .outer .box:before {
+    transform: translateY(0%);
+  }
+  body input:nth-of-type(1):checked ~ #wrap:before {
+    transform: translateX(0%);
+  }
+  body input:nth-of-type(1):checked ~ #wrap:after {
+    transform: translateY(0%);
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(1) .content {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.3s;
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(1) .content p:before {
+    transform: translateY(0);
+    transition-delay: 0.45s;
+    opacity: 1;
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(1) p.classifications {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.2s;
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(1) .image {
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+    transition-delay: 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(1) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(1):before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(2) .content {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(2) p.classifications {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(2) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(0) .image {
+    transition: 0.3s ease-in-out;
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(0) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(1):checked ~ #wrap .slide:nth-of-type(0):before {
+    transform: translateY(0);
+  }
+  /* body input:first-of-type:checked ~ #wrap:before {
+    transition: 0s;
+  }
+  body input:first-of-type:checked ~ #wrap:after {
+    transition: 0s;
+  } */
+  /* body input:first-of-type:checked ~ #wrap .slide:nth-of-type(2) {
+    opacity: 0;
+  } */
+  /* body input:first-of-type:checked ~ #wrap .slide:nth-of-type(3) {
+    transform-origin: top;
+  }
+  body input:first-of-type:checked ~ #wrap .slide:nth-of-type(4):before, body input:first-of-type:checked ~ #wrap .slide:nth-of-type(4) .label:before {
+    transform-origin: top;
+  } */
+  /* body input:last-of-type:checked {
+    z-index: 0;
+  }
+  body input:last-of-type:checked ~ .btn:before {
+    transform: translateY(calc(-50% + 1.5px)) translateX(-50%) rotate(135deg) scaleX(-1) scaleY(-1);
+  }
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1):before, body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1) .label:before {
+    transform: translateY(0);
+  }
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  } */
+  body input:nth-of-type(2) {
+    z-index: 8;
+  }
+  body input:nth-of-type(2):checked {
+    pointer-events: none;
+    opacity: 0;
+  }
+  body input:nth-of-type(2):checked + input {
+    z-index: 20;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .outer .box:before {
+    transform: translateY(25%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap:before {
+    transform: translateX(-25%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap:after {
+    transform: translateY(25%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .content {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.3s;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .content p:before {
+    transform: translateY(0);
+    transition-delay: 0.45s;
+    opacity: 1;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) p.classifications {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.2s;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .image {
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+    transition-delay: 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2):before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(3) .content {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(3) p.classifications {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(3) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(1) .image {
+    transition: 0.3s ease-in-out;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(1) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(1):before {
+    transform: translateY(0);
+  }
+  body input:first-of-type:checked ~ #wrap:before {
+    transition: 0s;
+  }
+  body input:first-of-type:checked ~ #wrap:after {
+    transition: 0s;
+  }
+  body input:first-of-type:checked ~ #wrap .slide:nth-of-type(2) {
+    opacity: 0;
+  }
+  body input:first-of-type:checked ~ #wrap .slide:nth-of-type(3) {
+    transform-origin: top;
+  }
+  body input:first-of-type:checked ~ #wrap .slide:nth-of-type(4):before, body input:first-of-type:checked ~ #wrap .slide:nth-of-type(4) .label:before {
+    transform-origin: top;
+  }
+  body input:last-of-type:checked {
+    z-index: 0;
+  }
+  body input:last-of-type:checked ~ .btn:before {
+    transform: translateY(calc(-50% + 1.5px)) translateX(-50%) rotate(135deg) scaleX(-1) scaleY(-1);
+  }
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1):before, body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1) .label:before {
+    transform: translateY(0);
+  }
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(1) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(3) {
+    z-index: 7;
+  }
+  body input:nth-of-type(3):checked {
+    pointer-events: none;
+    opacity: 0;
+  }
+  body input:nth-of-type(3):checked + input {
+    z-index: 20;
+  }
+  body input:nth-of-type(3):checked ~ #wrap .outer .box:before {
+    transform: translateY(50%);
+  }
+  body input:nth-of-type(3):checked ~ #wrap:before {
+    transform: translateX(-50%);
+  }
+  body input:nth-of-type(3):checked ~ #wrap:after {
+    transform: translateY(50%);
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(3) .content {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.3s;
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(3) .content p:before {
+    transform: translateY(0);
+    transition-delay: 0.45s;
+    opacity: 1;
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(3) p.classifications {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.2s;
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(3) .image {
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+    transition-delay: 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(3) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(3):before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(4) .content {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(4) p.classifications {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(4) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(2) .image {
+    transition: 0.3s ease-in-out;
+ 
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(2) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(3):checked ~ #wrap .slide:nth-of-type(2):before {
+    transform: translateY(0);
+  }
+  
+
+  body input:nth-of-type(2) {
+    z-index: 8;
+  }
+  body input:nth-of-type(2):checked {
+    pointer-events: none;
+    opacity: 0;
+  }
+  body input:nth-of-type(2):checked + input {
+    z-index: 20;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .outer .box:before {
+    transform: translateY(25%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap:before {
+    transform: translateX(-25%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap:after {
+    transform: translateY(25%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .content {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.3s;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .content p:before {
+    transform: translateY(0);
+    transition-delay: 0.45s;
+    opacity: 1;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) p.classifications {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.2s;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .image {
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+    transition-delay: 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(2):before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(3) .content {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(3) p.classifications {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(3) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(1) .image {
+    transition: 0.3s ease-in-out;
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(1) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(2):checked ~ #wrap .slide:nth-of-type(1):before {
+    transform: translateY(0);
+  }
+  
+
+
+  body input:nth-of-type(4) {
+    z-index: 8;
+    
+    
+  }
+  body input:nth-of-type(4):checked {
+    pointer-events: none;
+    opacity: 0;
+
+    
+  }
+  body input:nth-of-type(4):checked + input {
+    z-index: 20;
+    
+  }
+  body input:nth-of-type(4):checked ~ #wrap .outer .box:before {
+    transform: translateY(25%);
+    
+
+  }
+  body input:nth-of-type(4):checked ~ #wrap:before {
+    transform: translateX(-25%);
+ 
+    /* right border small box */
+  }
+  body input:nth-of-type(4):checked ~ #wrap:after {
+    transform: translateY(25%);
+    /* rightbox */
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(4) .content {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.3s;
+    
+    
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(4) .content p:before {
+    transform: translateY(0);
+    transition-delay: 0.45s;
+    opacity: 1;
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(4) p.classifications {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.2s;
+    
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(4) .image {
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+    transition-delay: 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+
+    /* imagebox */
+    
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(4) .label:before {
+    transform: translateY(0);
+    
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(4):before {
+
+    transform: translateY(0);
+
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(5) .content {
+    
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+   
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(5) p.classifications {
+    
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(5) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+   
+    
+    
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(4) .image {
+    transition: 0.3s ease-in-out;
+
+    /* image */
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(3) .label:before {
+    transform: translateY(0);
+  
+    
+  }
+  body input:nth-of-type(4):checked ~ #wrap .slide:nth-of-type(3):before {
+    transform: translateY(0);
+  }
+
+
+/* 5 */
+  body input:nth-of-type(5) {
+    z-index: 8;
+  }
+  body input:nth-of-type(5):checked {
+    pointer-events: none;
+    opacity: 0;
+  }
+  body input:nth-of-type(5):checked + input {
+    z-index: 20;
+  }
+  body input:nth-of-type(5):checked ~ #wrap .outer .box:before {
+    transform: translateY(25%);
+  }
+  body input:nth-of-type(5):checked ~ #wrap:before {
+    transform: translateX(-25%);
+  }
+  body input:nth-of-type(5):checked ~ #wrap:after {
+    transform: translateY(25%);
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(5) .content {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.3s;
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(5) .content p:before {
+    transform: translateY(0);
+    transition-delay: 0.45s;
+    opacity: 1;
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(5) p.classifications {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.2s;
+
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(5) .image {
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+    transition-delay: 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(5) .label:before {
+    transform: translateY(0);
+
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(5):before {
+    transform: translateY(0);
+
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(6) .content {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(6) p.classifications {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(6) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(5) .image {
+    transition: 0.3s ease-in-out;
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(4) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(5):checked ~ #wrap .slide:nth-of-type(4):before {
+    transform: translateY(0);
+  }
+
+
+  
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(6):before, body input:last-of-type:checked ~ #wrap .slide:nth-of-type(6) .label:before {
+    transform: translateY(0);
+  }
+  body input:last-of-type:checked ~ #wrap .slide:nth-of-type(6) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(6) {
+    z-index: 9;
+  }
+  body input:nth-of-type(6):checked {
+    pointer-events: none;
+    opacity: 0;
+  }
+  body input:nth-of-type(6):checked + input {
+    z-index: 20;
+  }
+  body input:nth-of-type(6):checked ~ #wrap .outer .box:before {
+    transform: translateY(0%);
+  }
+  body input:nth-of-type(6):checked ~ #wrap:before {
+    transform: translateX(0%);
+  }
+  body input:nth-of-type(6):checked ~ #wrap:after {
+    transform: translateY(0%);
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(6) .content {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.3s;
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(6) .content p:before {
+    transform: translateY(0);
+    transition-delay: 0.45s;
+    opacity: 1;
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(6) p.classifications {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: 0.2s;
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(6) .image {
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+    transition-delay: 0.1s;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(6) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(7):before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(7) .content {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(7) p.classifications {
+    -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(7) .image {
+    transform: translateX(-50%) translateY(calc(-50% + 100vh));
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(5) .image {
+    transition: 0.3s ease-in-out;
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(5) .label:before {
+    transform: translateY(0);
+  }
+  body input:nth-of-type(6):checked ~ #wrap .slide:nth-of-type(5):before {
+    transform: translateY(0);
+  }
+
+
+
+
+
+
+  
+  body #wrap {
+    min-width: 800px;
+    min-height: 600px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.45);
+  }
+
+
+  body #wrap .outer {
+    z-index: -1;
+    position: absolute;
+    width: 25%;
+    height: 50%;
+  }
+  body #wrap .outer .box {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 400vh;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  body #wrap .outer .box:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to top, #f58286 25%, #1cc6ca 25%, #1cc6ca 50%, #eb4e4e 50%, #eb4e4e 75%, #f58286 75%);
+    transition: transform 600ms cubic-bezier(1, 0.885, 0.72, 1);
+  }
+  body #wrap:before, body #wrap:after {
+    content: "";
+    position: absolute;
+    width: 200vw;
+    height: 100vh;
+    background: linear-gradient(to right, #fef7ce 25%, #f76e3e 25%, #f76e3e 50%, #1cc6ca 50%, #1cc6ca 75%, #fef7ce 75%);
+    margin-top: calc(-50vh + 300px);
+    z-index: -2;
+    transition: transform 650ms cubic-bezier(1, 0.885, 0.72, 1);
+    left: 0;
+    top: 0;
+  }
+  body #wrap:before {
+    margin-left: calc(-50vw + 400px);
+  }
+  body #wrap:after {
+    background: linear-gradient(to bottom, #4a5bb2 25%, #f19d46 25%, #f19d46 50%, #64377f 50%, #64377f 75%, #4a5bb2 75%);
+    opacity: 1;
+    left: 50%;
+    height: 400vh;
+    width: 50vw;
+    z-index: -1;
+    transition: transform 700ms cubic-bezier(1, 0.885, 0.72, 1);
+    margin-top: calc(-250vh + 300px);
+  }
+  body #wrap .slide {
+    position: absolute;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 15% 85%;
+    z-index: 2;
+    overflow: hidden;
+  }
+  body #wrap .slide:nth-of-type(1):before {
+    background: #f58286;
+  }
+  body #wrap .slide:nth-of-type(1) .image {
+    background-image: url("../image/maps.png");
+  }
+  body #wrap .slide:nth-of-type(1) .label:before {
+    background: #64377f;
+  }
+  body #wrap .slide:nth-of-type(1) .content h1:before {
+    content: "Data";
+  }
+  body #wrap .slide:nth-of-type(1) .content p span:last-of-type:after {
+    content: "Sensors provide data that can be visualized on maps, offering intuitive and easy-to-understand representations of complex information.";
+  }
+  body #wrap .slide:nth-of-type(1) p.classifications span:first-of-type:after {
+    content: "Leaflet";
+  }
+  body #wrap .slide:nth-of-type(1) p.classifications span:nth-of-type(2):after{
+    content: "streetpmap,\a streetmap.Hot, \a World Imagery and \a World Topo.";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(1) p.classifications span:nth-of-type(3):after{
+    content: "PressureSensors(4),\a and Smart Water Meter(4)";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(2):before {
+    background: #1cc6ca;
+  }
+  body #wrap .slide:nth-of-type(2) .image {
+    background-image: url("../image/smetterslide2.png");
+  }
+  body #wrap .slide:nth-of-type(2) .label:before {
+    background: #f19d46;
+  }
+  body #wrap .slide:nth-of-type(2) .content h1:before {
+    content: "Smart Water Meter";
+  }
+  body #wrap .slide:nth-of-type(2) .content p span:last-of-type:after {
+    content: "Smart water meters provide real-time data on water usage, enabling continuous monitoring for consumers and utility companies.";
+  }
+  body #wrap .slide:nth-of-type(2) p.classifications span:first-of-type:after {
+    content: "DN15-25";
+  }
+  body #wrap .slide:nth-of-type(2) p.classifications span:nth-of-type(2):after{
+    content: "Q3/Q1, R250";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(2) p.classifications span:nth-of-type(3):after{
+    content: "1.6 MPa";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(2) p.classifications span:nth-of-type(4):after{
+    content: "LCD, 8 digits +\a additional characters";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(2) p.classifications span:nth-of-type(5):after{
+    content: "RS485 modbus/ LoRa/\a LoRawan/GPRS/NB-IOT";
+    white-space: pre;
+  }
+
+  
+  body #wrap .slide:nth-of-type(3):before {
+    background: #ec575a;
+  }
+  body #wrap .slide:nth-of-type(3) .image {
+    background-image: url("../image/psslide1.png");
+  }
+  body #wrap .slide:nth-of-type(3) .label:before {
+    background: #4a5bb2;
+  }
+  body #wrap .slide:nth-of-type(3) .content h1:before {
+    content: "PressureSensor";
+  }
+  /* body #wrap .slide:nth-of-type(3) .content p span:first-of-type:after {
+    content: "Your Face";
+  } */
+  body #wrap .slide:nth-of-type(3) .content p span:last-of-type:after {
+    content: "A wireless water meter is a device that measures water usage without needing physical wires for connection.";
+  }
+  body #wrap .slide:nth-of-type(3) p.classifications span:first-of-type:after {
+    content: "Gauge pressure\a transmitter";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(3) p.classifications span:nth-of-type(2):after{
+    content: " 4 to 20 mA\a DC Output with digital\a communication \a(HART protocol)";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(3) p.classifications span:nth-of-type(3):after{
+    content: "D - 1 to 50 MPa \a(145 to 7200 psi)";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(3) p.classifications span:nth-of-type(4):after{
+    content: "L - 316 SST \a 2-inch pipe mounting";
+    white-space: pre;
+  }
+  
+
+  body #wrap .slide:nth-of-type(4):before {
+    background: #6559eb;
+  }
+  body #wrap .slide:nth-of-type(4) .image {
+    background-image: url("../image/smartqualityslide.png");
+  }
+  body #wrap .slide:nth-of-type(4) .label:before {
+    background: #46f196;
+  }
+  body #wrap .slide:nth-of-type(4) .content h1:before {
+    content: "SmartQuality Meter";
+  }
+  body #wrap .slide:nth-of-type(4) .content p span:last-of-type:after {
+    content: " The Smart Water Quality meter checks the purity of portable water that the consumer receives, by measuring five qualitative parameters of water viz.  pH, temperature, turbidity, dissolved oxygen and conductivity. ";
+  }
+  body #wrap .slide:nth-of-type(4) p.classifications span:first-of-type:after {
+    content: "MPG-6099r";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(4) p.classifications span:nth-of-type(2):after{
+    content: "PH/TEMP/TDS/\aTURBIDITY/CL";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(4) p.classifications span:nth-of-type(3):after{
+    content: "RS485";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(4) p.classifications span:nth-of-type(4):after{
+    content: "AC 220V+/-10%";
+    white-space: pre;
+  }
+
+
+  body #wrap .slide:nth-of-type(5):before {
+    background: #1cca42;
+  }
+  body #wrap .slide:nth-of-type(5) .image {
+    background-image: url("../image/cctv.png");
+  }
+  body #wrap .slide:nth-of-type(5) .label:before {
+    background: #daf146;
+  }
+  body #wrap .slide:nth-of-type(5) .content h1:before {
+    content: "Surveillance Camera";
+  }
+  body #wrap .slide:nth-of-type(5) .content p span:last-of-type:after {
+    content: "is a TV system in which signals are not publicly distributed but are monitored, primarily for surveillance and security purposes. CCTV relies on strategic placement of cameras and private observation of the camera`s input on monitors.";
+  }
+  body #wrap .slide:nth-of-type(5) p.classifications span:first-of-type:after {
+    content: "Human Motion Tracking,\a NIGHT VISION,\a Motion Detection,\a Sound Detection,\a Two-way Audio";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(5) p.classifications span:nth-of-type(2):after{
+    content: " Two-way Audio,\a PAN-TILT, RESET,\a NIGHT VISION";
+    white-space: pre;
+  }
+  body #wrap .slide:nth-of-type(5) p.classifications span:nth-of-type(3):after{
+    content: "Dome Camera, PTZ camera";
+    white-space: pre;
+  }
+
+
+  body #wrap .slide:nth-of-type(6):before {
+    background: #f19d46;
+  }
+  body #wrap .slide:nth-of-type(6) .image {
+    background-image: url("../image/MIKE.png");
+    width: 200px;
+  }
+  body #wrap .slide:nth-of-type(6) .label:before {
+    background: #64377f;
+  }
+  body #wrap .slide:nth-of-type(6) .content h1:before {
+    content: "MIKE OPERATIONS";
+  }
+  body #wrap .slide:nth-of-type(6) .content p span:last-of-type:after {
+    content: "designed for users who need a quick overview of the operational system status and who need to test operational alternatives";
+  }
+  body #wrap .slide:nth-of-type(6) p.classifications span:first-of-type:after {
+    content: "an advanced desktop client,\a designed for expert users\a who apply\a data analysis and process\a tools interactively and\a are able to configure\a automated\a workflows, scripts and\a custom-made data reports.";
+    white-space: pre;
+  }
+
+
+
+
+  body #wrap .slide:before, body #wrap .slide .label:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: #8299f5;
+    z-index: -1;
+    transform: translateY(100%);
+    transform-origin: bottom;
+    transition: all 600ms cubic-bezier(1, 0.885, 0.72, 1);
+  }
+  body #wrap .slide .label {
+    grid-column: 1/span 1;
+    grid-row: 1/span 1;
+    position: relative;
+    overflow: hidden;
+  }
+  body #wrap .slide .label:after {
+    content: "DssTools";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 26px;
+    color: #fff;
+    font-weight: 700;
+  }
+  body #wrap .slide .label:before {
+    transition: all 650ms cubic-bezier(1, 0.885, 0.72, 1);
+    width: 100%;
+  }
+  body #wrap .slide .search {
+    grid-column: 2/span 1;
+    grid-row: 1/span 1;
+  }
+  body #wrap .slide .image {
+    position: absolute;
+    width: 47.5%;
+    height: 47.5%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-100vw);
+    will-change: transform;
+  }
+  body #wrap label {
+    color: #fff;
+    -webkit-text-stroke: 0.75px rgba(0, 0, 0, 0.25);
+    font-size: 50px;
+    font-weight: 900;
+    position: absolute;
+    margin: 0;
+    top: 275px;
+    width: 50%;
+    left: -125px;
+    transform: rotate(-90deg);
+  }
+  body #wrap .content {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    right: 0%;
+    transform: translateY(calc(-50% - 25px));
+    top: 50%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: -webkit-clip-path 0.6s ease-in-out;
+    transition: clip-path 0.6s ease-in-out;
+    transition: clip-path 0.6s ease-in-out, -webkit-clip-path 0.6s ease-in-out;
+    padding: 0 75px 100px 100px;
+  }
+  body #wrap .content p {
+    color: #fff;
+    float: right;
+    text-align: left;
+    opacity: 1;
+    width: 100%;
+    font-size: 14px;
+    line-height: 2;
+    position: relative;
+  }
+  body #wrap .content p span:after {
+    display: inline-block;
+    clear: left;
+    margin-left: 5px;
+  }
+  body #wrap .content h1 {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+  }
+  body #wrap .content h1:before {
+    content: "";
+    display: block;
+    text-align: left;
+    max-width: 100%;
+    font-family: "Playfair Display";
+    color: #fff;
+  }
+  body #wrap p.classifications {
+    position: absolute;
+    left: 17.5%;
+    top: 25%;
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    transition: -webkit-clip-path 0.3s ease-in-out;
+    transition: clip-path 0.3s ease-in-out;
+    transition: clip-path 0.3s ease-in-out, -webkit-clip-path 0.3s ease-in-out;
+  }
+  body #wrap p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.35;
+  }
+  body #wrap p span {
+    display: block;
+    clear: both;
+    font-weight: 600;
+  }
+  body #wrap p span:after {
+    display: block;
+    clear: both;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }

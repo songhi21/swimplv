@@ -1,0 +1,42 @@
+.profileImage {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #512DA8;
+    font-size: 55px;
+    color: #fff;
+    text-align: center;
+    line-height: 130px;
+    margin: 10px 10px 10px -10px;
+    margin: auto;
+  }
+.buttoncenter{  
+  text-align: center;    
+  width: 100px;  
+  height: 143px;  
+  padding-top: 20px;  
+  } 
+.textcenter{
+  text-align: center!important;
+}
+.textright{
+  text-align: right;
+}
+.textleft{
+  text-align: left;
+}
+
+.cover{
+
+  object-fit: cover;
+  
+  width: 1250px;
+  
+  /* margin:20px; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  height: 600px;
+  
+  }

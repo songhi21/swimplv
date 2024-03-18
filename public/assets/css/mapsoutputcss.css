@@ -1,0 +1,20 @@
+.imgsize{
+    width: 100%;
+    height: 200px;
+    object-fit:contain;
+}
+.atextcustomas{
+    margin-left: -13px;
+    color: rgb(44, 65, 223);
+}
+.atextcustomas:hover {
+    margin-left: -13px;
+    color: rgb(255, 255, 255);
+}
+.pcustom{
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

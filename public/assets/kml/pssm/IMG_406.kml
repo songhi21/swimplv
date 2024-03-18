@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+	<Style id="placemark-w0">
+		<IconStyle>
+			<color>ff334fd9</color>
+			<scale>1</scale>
+			<Icon>
+				<href>http://notecam.derekr.com/placemarks/place_w0.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="placemark-w1">
+		<IconStyle>
+			<color>ffd73e30</color>
+			<scale>1</scale>
+			<Icon>
+				<href>http://notecam.derekr.com/placemarks/place_w1.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="placemark-w2">
+		<IconStyle>
+			<color>ff30c9d7</color>
+			<scale>1</scale>
+			<Icon>
+				<href>http://notecam.derekr.com/placemarks/place_w2.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="placemark-w3">
+		<IconStyle>
+			<color>ffd7309f</color>
+			<scale>1</scale>
+			<Icon>
+				<href>http://notecam.derekr.com/placemarks/place_w3.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="placemark-w4">
+		<IconStyle>
+			<color>ff30d768</color>
+			<scale>1</scale>
+			<Icon>
+				<href>http://notecam.derekr.com/placemarks/place_w4.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="placemark-w5">
+		<IconStyle>
+			<color>ff902fd6</color>
+			<scale>1</scale>
+			<Icon>
+				<href>http://notecam.derekr.com/placemarks/place_w5.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="placemark-w6">
+		<IconStyle>
+			<color>fff7bb30</color>
+			<scale>1</scale>
+			<Icon>
+				<href>http://notecam.derekr.com/placemarks/place_w6.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<name>IMG_406_NoteCam</name>
+	<visibility>1</visibility>
+	<ExtendedData xmlns:mwm="https://notecam.derekr.com/">
+		<mwm:name>
+			<mwm:lang code="default">IMG_406_NoteCam</mwm:lang>
+		</mwm:name>
+	</ExtendedData>
+	<Placemark>
+		<name>Smart meter 1</name>
+		<description><![CDATA[<!--<img src="IMG_406.jpg" height="auto" width="auto" />-->]]></description>
+		<TimeStamp><when>2023-10-26T13:22:52+08:00</when></TimeStamp>
+		<styleUrl>#placemark-w4</styleUrl>
+		<altitudeMode>relativeToGround</altitudeMode>
+		<Point><coordinates>121.76689833333333,16.95325,13.75</coordinates></Point>
+		<address><![CDATA[XQ38+9G9, Cauayan City, Isabela, Philippines]]></address>
+	</Placemark>
+</Document>
+</kml>
