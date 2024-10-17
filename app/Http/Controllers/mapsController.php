@@ -219,8 +219,8 @@ class mapsController extends Controller
     public function getSingleDeviceDatawell(Request $request)
     {
         // Define static values
-        define('DEVICE_ID', '254718');
-        define('DEVICE_NO', 'M8091G4NJ67LK54N');
+        define('DEVICE_ID', '');
+        define('DEVICE_NO', '');
         define('CURR_PAGE', '1');
         define('PAGE_SIZE', '10');
 
@@ -349,7 +349,7 @@ class mapsController extends Controller
             // Define the request body for sensor history
             $historyBody = [
                 'userId' => $userid, // Replace with actual User Id
-                'sensorId' => '3885865', // Replace with actual Sensor Id
+                'sensorId' => '', // Replace with actual Sensor Id
                 'startDate' => '2024-01-08 00:00:00',
                 'endDate' => '2024-05-02 00:59:59',
                 'pagingState' => '', // Assuming this is the starting page
@@ -425,7 +425,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => 3885865, // Replace with the actual sensor ID
+                'sensorId' => , // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
@@ -501,7 +501,7 @@ class mapsController extends Controller
             // Define the request body for sensor history
             $historyBody = [
                 'userId' => $userid, // Replace with actual User Id
-                'sensorId' => '3885866', // Replace with actual Sensor Id
+                'sensorId' => '', // Replace with actual Sensor Id
                 'startDate' => '2024-01-08 00:00:00',
                 'endDate' => '2024-05-02 00:59:59',
                 'pagingState' => '', // Assuming this is the starting page
@@ -584,7 +584,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => 3885866, // Replace with the actual sensor ID
+                'sensorId' => , // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
@@ -677,7 +677,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => 3885867, // Replace with the actual sensor ID
+                'sensorId' => , // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
@@ -756,7 +756,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => 3885868, // Replace with the actual sensor ID
+                'sensorId' => , // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
@@ -920,7 +920,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => 3885870, // Replace with the actual sensor ID
+                'sensorId' => , // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
@@ -961,7 +961,7 @@ class mapsController extends Controller
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = '';
 
         // Define the request headers
         $headers = [
@@ -990,7 +990,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = '';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
@@ -1002,7 +1002,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => 3885870, // Replace with the actual sensor ID
+                'sensorId' => , // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
@@ -1077,7 +1077,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' =>3885871, // Replace with the actual sensor ID
+                'sensorId' =>, // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
