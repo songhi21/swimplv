@@ -30,11 +30,11 @@
                 <div class="container image_wrapper">
                     <a class="navbar-brand" href="<?php echo e(config('variable.url')); ?>/" style="font-weight:bold!important">
                         <img src="image/p3.png" width="80" height="60" alt="" >
-                        <span style="font-weight: bold; color:rgb(17, 17, 17);font-family: Lucida Handwriting;">Swim Project 3 </span>
+                        <span style="font-weight: bold; color:rgb(17, 17, 17);font-family: Lucida Handwriting!important;">Swim Project 3 </span>
                         <span style="font-weight: bold; color:rgb(17, 17, 17)">| </span>
                     </a>
                     
-                    <span style="font-size: 100%;  color:rgb(17, 17, 17); ">  Storm Water Harvesting Facility Decision Support</span>
+                    <span style="font-size: 100%!important;  color:rgb(17, 17, 17)!important; ">  Storm Water Harvesting Facility Decision Support</span>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -77,8 +77,9 @@
             
             
             
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+            
+            <script src="js/jquery.min.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
             <script src="js/loadingjs.js"></script>
         </div>
     </body>

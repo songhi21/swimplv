@@ -13,6 +13,14 @@
 
 
 }
+#map3 { 
+    height: 60vh!important;
+    width: 100%;
+
+    /* margin-top: -50px!important; */
+
+
+}
 .feature-label {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #222;
@@ -203,3 +211,88 @@ a:hover {
     border-radius: 5px;
     display: none; /* Hide initially */
 }
+/* chart------------- */
+.quiz-graph-container {
+    padding: 0px; 
+    height: 370px;
+    width: 100%;
+    object-fit: contain!important;
+    overflow: hidden; /* Ensure SVG content doesn't overflow */
+}
+
+.quiz-graph {
+    height: 100%; /* Fill the container height */
+    width: 100%; /* Fill the container width */
+    object-fit: contain!important;
+}
+
+/* Your other CSS styles */
+.quiz-chartTip {
+    padding: 5px 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 4px;
+    background-color: rgba(255,255,255,.9);
+    box-shadow: 3px 3px 10px rgba(0,0,0,.1);
+    position: absolute;
+    z-index: 50;
+    max-width: 100%;
+    border: red 2px solid;
+    object-fit: contain!important;
+}
+
+.quiz-graph .x-labels {
+    text-anchor: middle;
+}
+
+.quiz-graph .y-labels {
+    text-anchor: end;
+}
+
+.quiz-graph .quiz-graph-grid {
+    stroke: #ccc;
+    stroke-dasharray: 0;
+    stroke-width: 1;
+}
+
+.label-title {
+    text-anchor: middle;
+    text-transform: uppercase;
+    font-size: 12px;
+    fill: gray;
+}
+
+.quiz-graph-dot, .quiz-graph-start-dot{
+    fill: rgba(0,112,210,1);
+    stroke-width: 2;
+    stroke: white;   
+}
+/* chart-------------end */
+
+
+#baseLayersDropdown {
+    margin-top: 140px; /* Adjust margin-top as needed */
+    padding: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    position: absolute;
+    right: 10px; /* Position to the right */
+    z-index: 1000; /* Ensure dropdown appears above the map */
+    width: 210px; /* Adjust width as needed */
+    height: 30px; /* Adjust height as needed */
+    font-size: 14px; /* Adjust font size as needed */
+  }
+/* controllersensor */
+ /* Custom styling for layer control */
+ .leaflet-control-layers-tree .leaflet-control-layers-selector {
+    background-color: white!important;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .leaflet-control-layers-tree .leaflet-control-layers-group {
+    margin-bottom: 10px;
+  }
+
+
+
+  

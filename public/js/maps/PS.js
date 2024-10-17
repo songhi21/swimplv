@@ -8,10 +8,12 @@ function ps1() {
     $.ajax({
         url: '/getDataps-1admin',
         method: 'GET',
-        // beforeSend: function(){
-        // },
+        beforeSend: function(){
+            document.getElementById("ps1id").textContent = 'Loading data...';
+            $('#loading-overlay').hide();
+        },
         success: function(dataps1) {
-
+            document.getElementById("ps1id").textContent = dataps1.deviceid;
             document.getElementById("ps1").value = dataps1.currentValue;
             document.getElementById("ps1time").textContent = 'As of: ' + dataps1.CommunicationTime;
             requestAllowed = true; 
@@ -20,7 +22,10 @@ function ps1() {
             document.getElementById("ps1").value = 0;
             document.getElementById("ps1time").textContent = 'As of: Error fetching data' ;
             console.error('Error fetching data:', error);
-            requestAllowed = false; 
+            setTimeout(ps1, 1000);
+            requestAllowed = true;  
+            
+            
 
         }
     });
@@ -37,9 +42,12 @@ function ps2() {
     $.ajax({
         url: '/getDataps-2admin',
         method: 'GET',
-        // beforeSend: function(){
-        // },
+        beforeSend: function(){
+            document.getElementById("ps2id").textContent = 'Loading data...';
+            $('#loading-overlay').hide();
+        },
         success: function(dataps2) {
+            document.getElementById("ps2id").textContent = dataps2.deviceid;
             document.getElementById("ps2").value = dataps2.currentValue;
             document.getElementById("ps2time").textContent = 'As of: ' +  dataps2.CommunicationTime; 
             requestAllowed = true; 
@@ -50,7 +58,9 @@ function ps2() {
             document.getElementById("ps2").value = 0;
             document.getElementById("ps2time").textContent = 'As of: Error fetching data' ;
             console.error('Error fetching data:', error);
-            requestAllowed = false; 
+            setTimeout(ps2, 1000);
+            requestAllowed = true; 
+            
 
         }
     });
@@ -66,9 +76,13 @@ function ps3() {
     $.ajax({
         url: '/getDataps-3admin',
         method: 'GET',
-        // beforeSend: function(){
-        // },
+        beforeSend: function(){
+            document.getElementById("ps3id").textContent = 'Loading data...';
+            $('#loading-overlay').hide();
+
+        },
         success: function(dataps3) {
+            document.getElementById("ps3id").textContent = dataps3.deviceid;
             document.getElementById("ps3").value = dataps3.currentValue;
             document.getElementById("ps3time").textContent = 'As of: ' + dataps3.CommunicationTime;
             requestAllowed = true; 
@@ -81,7 +95,10 @@ function ps3() {
             document.getElementById("ps3").value = 0;
             document.getElementById("ps3time").textContent = 'As of: Error fetching data' ;
             console.error('Error fetching data:', error);
-            requestAllowed = false; 
+            setTimeout(ps3, 1000);
+            requestAllowed = true;  
+            
+            
 
 
         }
@@ -97,11 +114,14 @@ function ps4() {
         return;
     }
     $.ajax({
-        url: '/getDataps-3admin',
+        url: '/getDataps-4admin',
         method: 'GET',
-        // beforeSend: function(){
-        // },
+        beforeSend: function(){
+            document.getElementById("ps4id").textContent = 'Loading data...';
+            $('#loading-overlay').hide();
+        },
         success: function(dataps4) {
+            document.getElementById("ps4id").textContent = dataps4.deviceid;
             document.getElementById("ps4").value = dataps4.currentValue;
             document.getElementById("ps4time").textContent = 'As of: ' + dataps4.CommunicationTime;
             requestAllowed = true; 
@@ -114,7 +134,9 @@ function ps4() {
             document.getElementById("ps4").value = 0;
             document.getElementById("ps4time").textContent = 'As of: Error fetching data' ;
             console.error('Error fetching data:', error);
-            requestAllowed = false; 
+            setTimeout(ps4, 1000);
+            requestAllowed = true;  
+            
 
 
         }
@@ -122,3 +144,4 @@ function ps4() {
 }
 ps4();
 setInterval(ps4, 3600000);
+$('#loading-overlay').hide();

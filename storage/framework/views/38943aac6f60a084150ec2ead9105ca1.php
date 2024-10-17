@@ -71,8 +71,11 @@
               </a>
               <div class="collapse show" id="auth2" style="">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>smartwatersensordevice"> Smart Water Meter </a></li>
+                    <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>groundwatermonitoringwell"> Ground Water Well </a></li>
                     <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>pressuresensordevice"> Presure Sensors </a></li>
+                    <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>smartwatersensordevice"> Smart Water Meter </a></li>
+                    
+                    
                 </ul>
               </div>
         </li>
@@ -87,7 +90,7 @@
             <div class="collapse show" id="auth" style="">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="<?php echo e(config('variable.url')); ?>cctv"> Software </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?php echo e(config('variable.url')); ?>cctvview"> CCTV Data </a></li>
+                
               </ul>
             </div>
           </li>

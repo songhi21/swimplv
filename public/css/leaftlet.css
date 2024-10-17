@@ -386,7 +386,8 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	padding: 6px 10px 6px 6px;
 	color: #fcf8f8;
 	background:  rgba(6, 6, 6, 0.6);
-	margin-top: 112px!important;
+	margin-top: 182px!important;
+	width: 210px;
 	}
 .leaflet-control-layers-scrollbar {
 	overflow-y: scroll;
@@ -398,11 +399,13 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-top: 2px;
 	position: relative;
 	top: 1px;
+
 	}
 .leaflet-control-layers label {
 	display: block;
 	font-size: 13px;
 	font-size: 1.08333em;
+	/* border: red 2px solid; */
 	}
 .leaflet-control-layers-separator {
 	height: 0;
@@ -669,3 +672,35 @@ svg.leaflet-image-layer.leaflet-interactive path {
 		print-color-adjust: exact;
 		}
 	}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    /* outline: none; */
+    cursor: pointer;
+	background-color: white;
+	
+}
+
+/* Style the custom checkbox when checked */
+input[type="checkbox"]:checked {
+    background-color: #078cc1; /* Change the background color when checked */
+    border-color: #089fda; /* Change the border color when checked */
+}
+
+/* Style the checkmark inside the custom checkbox */
+input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 14px;
+    color: #fff; /* Change the checkmark color */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

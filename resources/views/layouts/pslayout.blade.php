@@ -110,7 +110,7 @@
 <script src="assets/js/psjsadmin/datatables/buttons.print.min.js"></script>
 
 <script src="assets/js/psjsadmin/dt.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+<script type="text/javascript" src="../assets/js/psjsadmin/datatables/xlsx.full.min.js"></script>
 
 <script src="js/loadingjs.js"></script>
 

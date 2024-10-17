@@ -1,0 +1,54 @@
+[18-Apr-2024 11:50:09 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:09 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:09 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:10 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:11 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:11 Asia/Manila] PHP Warning:  require(/home/swimproj/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/swimproj/public_html/public/index.php on line 34
+[18-Apr-2024 11:50:11 Asia/Manila] PHP Fatal error:  Uncaught Error: Failed opening required '/home/swimproj/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/swimproj/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/swimproj/public_html/public/index.php on line 34

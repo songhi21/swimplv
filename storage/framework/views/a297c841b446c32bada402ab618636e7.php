@@ -31,12 +31,35 @@
     
     <link href="assets/css/firstletter.css" rel="stylesheet"/>
     
+    <link href="assets/css/psstyle.css" rel="stylesheet"/>
+    
+    <link href="assets/css/datatables/buttons.bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/datatables/dataTables.bootstrap.css" rel="stylesheet"/>
+    <link href="css/loadingcss.css" rel="stylesheet">
+
+    
+    <style>
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+    </style>
 
 
 
 </head>
 <body class="antialiased">
     
+    <div id="loading-overlay">
+        <div id="loading-spinner"></div>
+    </div>
     <div class="container-scroller ">
         
         <?php echo $__env->make('layouts.sidenav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -49,16 +72,12 @@
 
 
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
-<script src="assets/js/firstletter.js" type="text/javascript"></script>
-
-<script src="assets/vendors/chart/Chart.min.js"></script>
-<script src="assets/vendors/chart/clearinputtext.js" type="text/javascript"></script>
 
 
-<script src="assets/vendors/progressbar.js/progressbar.min.js"></script>
-<script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-<script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<script src="assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+
+
+
+
 
 <script src="assets/js/off-canvas.js"></script>
 <script src="assets/js/hoverable-collapse.js"></script>
@@ -69,6 +88,30 @@
 <script src="assets/js/dashboard.js"></script>
 <script src="js/hideerror.min.js"></script>
 <script src="js/preventmultiple.min.js"></script>
+<script src="assets/js/swjsadmin/sw.js"></script>
+
+
+
+<script src="assets/js/psjsadmin/datatables/dataTables.js"></script>
+<script src="assets/js/psjsadmin/datatables/popper.min.js"></script>
+<script src="assets/js/psjsadmin/datatables/dataTables.bootstrap.js"></script>
+<script src="assets/js/psjsadmin/datatables/dataTables.buttons.js"></script>
+<script src="assets/js/psjsadmin/datatables/buttons.bootstrap.js"></script>
+<script src="assets/js/psjsadmin/datatables/jszip.min.js"></script>
+<script src="assets/js/psjsadmin/datatables/pdfmake.min.js"></script>
+<script src="assets/js/psjsadmin/datatables/vfs_fonts.js"></script>
+<script src="assets/js/psjsadmin/datatables/buttons.html5.min.js"></script>
+<script src="assets/js/psjsadmin/datatables/buttons.print.min.js"></script>
+
+<script src="assets/js/swjsadmin/swcontent.js"></script>
+<script type="text/javascript" src="../assets/js/psjsadmin/datatables/xlsx.full.min.js"></script>
+
+<script src="js/loadingjs.js"></script>
+
+
+
+
+
 
 
 

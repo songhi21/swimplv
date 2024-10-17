@@ -1,63 +1,69 @@
-@extends('layouts.app')
+@extends('layouts.loginlayouts')
 <link href="{{ config('variable.url') }}css/style.css" rel="stylesheet">
 <link href="{{ config('variable.url') }}css/font.css" rel="stylesheet">
-@vite(['resources/js/app.js'])
+{{-- @vite(['resources/js/app.js']) --}}
 @section('content')
-<div class="container" onclick="onclick">
+<div class="container" onclick="onclick" >
     <div class="top"></div>
     <div class="bottom"></div>
     <div class="center">
+        <br>
+        <br>
+        <br>
+        <br>
         <img src="{{ config('variable.url') }}image/p3.png" style="width: 40%"/>
-         <h2>SWIM Project 3 Central Hub</h2>
+         <h2>SWIMP3 CentralHub</h2>
                     
             {{-- <div class="card-header">{{ __('Login') }}</div> --}}
 
             {{-- <div class="card-body"> --}}
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-
-                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                @error('email')
+                <form id="login-form" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" placeholder="Email Address" required autofocus ><br>
+                    <span id="email-error" class="invalid-feedback"></span><br>
+                    @error('email')
                     <div role="alert" x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 300)">
-                        <span class="invalid-feedback" >
+                        <span class="invalid-feedback">
                             <strong class="errormessagecolor">{{ $message }}</strong>
                         </span>
-
                     </div>
-                @enderror
-
-                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                @error('password')
+                    @enderror
+                    <input id="password" type="password" name="password" placeholder="Password"  required><br>
+                    <span id="password-error" class="invalid-feedback"></span><br>
+                
+                    @error('password')
                     <span class="invalid-feedback" role="alert">
                         <strong style="color: red">{{ $message }}</strong>
                     </span>
-                @enderror
-{{-- 
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    @enderror
+                    
 
-                    <label class="form-check-label" for="remember">
-                        {{ __('Remember Me') }}
-                    </label>
-                </div> --}}
 
-                <button type="submit" class="prevent bn5">
-                    {{ __('Login') }}
-                </button>
+                
+                    <div class="recaptcha-container">
+                        <!-- HTML code for the reCAPTCHA widget and error message -->
+                        {!! NoCaptcha::renderJs() !!}
+                        <div id="recaptcha-container" class="g-recaptcha centerbox" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}" ></div>
+                        <span id="captcha-error" class="invalid-feedback" style="color: red"></span><br> <!-- Error message for reCAPTCHA -->
+                        <!-- Reset reCAPTCHA button -->
+                        <button id="reset-recaptcha" type="button" class="btn btn-primary btn-lg float-end">Reset</button>
 
-                        {{-- @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif --}}
-                    <a href="{{ config('variable.url') }}/" class="center2">HomePage</a>
                     </div>
+                    <button type="submit" class="prevent bn5" id="btnsubmit">
+                        {{ __('Login') }}
+                    </button>
+                </form>
+
+                @if (Route::has('password.request'))
+                    <div  style=" text-align: center; margin-bottom: 10px;">    
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    </div>
+                @endif
+                <div style=" text-align: center; margin-bottom: 10px;">
+                    <a href="{{ config('variable.url') }}/" >HomePage</a>
+                </div>
                 
 
             </form>

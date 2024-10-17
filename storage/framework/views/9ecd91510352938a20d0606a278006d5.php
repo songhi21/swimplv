@@ -2,7 +2,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
         
-        <a> <b> Swim Central Hub</b></a>
+        <a  style="color: white!important"> <b> Swim Central Hub</b></a>
     </div>
     <ul class="nav">
         <li class="nav-item profile">
@@ -13,7 +13,7 @@
                 <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-                <h5 class="mb-0 font-weight-normal">Swim Project 3</h5>
+                <h5 class="mb-0 font-weight-normal" style="color: white!important">Swim Project 3</h5>
                 <span><?php echo e(Auth::user()->type); ?></span>
             </div>
             </div>
@@ -54,7 +54,7 @@
         </li>
         <li class="nav-item menu-items">
             
-            <a class="nav-link " href="home" >
+            <a class="nav-link " href="../home" >
                 <span class="menu-icon">
                     <i class="mdi mdi-speedometer"></i>
                 </span>
@@ -71,8 +71,9 @@
               </a>
               <div class="collapse show" id="auth2" style="">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>../smartwatersensordevice"> Smart Water Meter </a></li>
+                    <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>../groundwatermonitoringwell"> Ground Water Well </a></li>
                     <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>../pressuresensordevice"> Presure Sensors </a></li>
+                    <li class="nav-item"> <a class="nav-link"  href="<?php echo e(config('variable.url')); ?>../smartwatersensordevice"> Smart Water Meter </a></li>
                 </ul>
               </div>
         </li>
@@ -87,7 +88,7 @@
             <div class="collapse show" id="auth" style="">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="<?php echo e(config('variable.url')); ?>../cctv"> Software </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?php echo e(config('variable.url')); ?>../cctvview"> CCTV Data </a></li>
+                
               </ul>
             </div>
           </li>

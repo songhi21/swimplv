@@ -38,7 +38,11 @@
    {{-- <script src="path/to/leaflet/qgis_exported_map.js"></script>
    <script src="path/to/leaflet/qgis_exported_map.js"></script> --}}
     <!-- Include QGIS2Leaflet generated JavaScript -->
-    <script src="path_to_qgis2leaflet_exported_code/leaflet-map.js"></script>
+    {{-- <script src="path_to_qgis2leaflet_exported_code/leaflet-map.js"></script> --}}
+    {{-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/> --}}
+
+    <!-- Include the Leaflet Layers Control Tree CSS file -->
+    {{-- <link rel="stylesheet" href="https://unpkg.com/leaflet-control-layers-tree/dist/L.Control.Layers.Tree.css"/> --}}
 
 
 </head>
@@ -125,11 +129,11 @@
 
                         //Maplayer type --------------------------------------------
                         const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                maxZoom: 18,
+                                maxZoom: 30,
                                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             });
                         const osmHOT = L.tileLayer('https://tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-                                maxZoom: 18,
+                                maxZoom: 30,
                                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             });
                         // const openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -158,7 +162,7 @@
                             iconUrl: 'image/ps.png',
                             shadowUrl: 'image/marker-shadow.png',
 
-                            iconSize:     [38, 55], // size of the icon
+                            iconSize:     [36, 36], // size of the icon
                             shadowSize:   [50, 64], // size of the shadow
                             iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
                             shadowAnchor: [40, 62],  // the same for the shadow
@@ -168,7 +172,17 @@
                             iconUrl: 'image/swm.png',
                             shadowUrl: 'image/marker-shadow.png',
 
-                            iconSize:     [32, 55], // size of the icon
+                            iconSize:     [36, 36], // size of the icon
+                            shadowSize:   [50, 64], // size of the shadow
+                            iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                            shadowAnchor: [40, 62],  // the same for the shadow
+                            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                        });
+                        var gwmw = L.icon({
+                            iconUrl: 'image/Gwmwell.png',
+                            shadowUrl: 'image/marker-shadow.png',
+
+                            iconSize:     [36, 36], // size of the icon
                             shadowSize:   [50, 64], // size of the shadow
                             iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
                             shadowAnchor: [40, 62],  // the same for the shadow
@@ -177,14 +191,118 @@
                         //------------------------------------------------------------------------------
                         const map = L.map('map', {
                             center: [16.95248, 121.76696],
-                            zoom: 8,
+                            zoom: 18,
                             zoomControl: true,
-                            layers: [world_imagry]
+                            layers: [osmHOT]
                         });
                         //----maplayer end----------------------------------
+                        // groundwatermonitoringwell-----------------------------
+                        const gwmwg = L.layerGroup().addTo(map);
+                        const groundwatermonitoringwell = L.marker([16.953034381299513, 121.76665500029142], {icon: gwmw}).addTo(gwmwg);
+                        groundwatermonitoringwell.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/Gwmwell.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        groundwatermonitoringwell.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/Gwmwell.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        groundwatermonitoringwell.bindTooltip("<b>Ground Water Monitoring Well</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
+                        function updatePopupgwmwg() {
+                            // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
+                            $.ajax({
+                                url: '/getDataps-wellsensors',
+                                method: 'GET',
+                                beforeSend: function(){
+                                    map.spin(true);
+                                },
+                                success: function (sensorList) {
+                                    // Construct the popup content for all sensors
+                                    var popupContent = "<div>";
+
+                                    // Iterate over each item in the JSON array
+                                    $.each(sensorList, function(index, item) {
+                                        // Append information for each sensor to the popup content
+                                        popupContent += "<strong>Sensor Name:</strong> " + item.sensorName  +"<br>"+
+                                                        "<strong>Unit:</strong> " + item.unit +"<br>"+ 
+                                                        "<strong>As of:</strong> " + item.updateDate +"<br>"+ 
+                                                        "<strong>Current Value:</strong> " + item.value +"<br>"+"<br>";
+                                    });
+
+                                    // Close the div
+                                    popupContent += "</div>";
+
+                                    // Update the popup content and open the popup
+                                    groundwatermonitoringwell.bindPopup('<b>Groundwater monitoring well</b><br><br><div style="max-height: 200px; overflow-y: auto;">' + popupContent + '</div>').openPopup();
+
+                                    // groundwatermonitoringwell.bindPopup('<b>Groundwater monitoring well</b></br></br> ' +popupContent).openPopup();
+
+                                    // Log the entire resultgmw array to the console
+                                    // console.log(sensorList);
+
+                                    // Disable spinner or any other loading indicator
+                                    map.spin(false);
+                                                                    },
+                                error: function (error) {
+                                    groundwatermonitoringwell.bindPopup('Error fetching data' ).openPopup().addTo(map);
+                                    console.error('Error fetching data:', error);
+                                    map.spin(false);
+                                }
+                                });
+                        }
+                        // Open popup and fetch data when marker is clicked
+                        groundwatermonitoringwell.on('click', function () {
+                            updatePopupgwmwg();
+                        });
+                        // end-------------------
                         //-----pressure sensors----------------------------------------
-                        const psg = L.layerGroup();
+                        const psg = L.layerGroup().addTo(map);
                         const Pressuresensor = L.marker([16.95184,121.76739], {icon: psicon}).addTo(psg);
+
+                        Pressuresensor.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Pressuresensor.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        Pressuresensor.bindTooltip("<b>Pressuresensor</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
                         
                         function updatePopupps1() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
@@ -213,6 +331,33 @@
                         });
                         //-----endps1-------
                         const Pressuresensor2 = L.marker([16.95309,121.76623], {icon: psicon}).addTo(psg);
+                        Pressuresensor2.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Pressuresensor2.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        Pressuresensor2.bindTooltip("<b>Pressuresensor 2</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
                         function updatePopupps2() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
                             $.ajax({
@@ -242,6 +387,33 @@
                         
                         //---ps3--------
                         const Pressuresensor3 = L.marker([16.95283,121.76595], {icon: psicon}).addTo(psg);
+                        Pressuresensor3.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Pressuresensor3.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        Pressuresensor3.bindTooltip("<b>Pressuresensor 3</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
                         
                         function updatePopupps3() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
@@ -272,6 +444,34 @@
                         //----endps3-----
                         //---ps4--------
                         const Pressuresensor4 = L.marker([16.95258,121.76677], {icon: psicon}).addTo(psg);
+                        Pressuresensor4.bindTooltip("Pressure Sensor 4");
+                        Pressuresensor4.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Pressuresensor4.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/ps.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        Pressuresensor4.bindTooltip("<b>Pressuresensor 4</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
                         
                         function updatePopupps4() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
@@ -308,10 +508,36 @@
                         //grouplayers-------------------------------------------------------
                         //grouplayersSWM-------------------------------------------------------
 
-                        const swmg = L.layerGroup();
+                        const swmg = L.layerGroup().addTo(map);
                         //--Smartwatermeter-------------------------------------------------
-
                         const Smartwatermeter = L.marker([16.95325, 121.76689], {title: 'Smart water Meter 1',icon: swmicon}).addTo(swmg);
+                        Smartwatermeter.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Smartwatermeter.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        Smartwatermeter.bindTooltip("<b>Smart Water Meter</b><br><p style='font-style: italic;'>Click to view the data..</p>");
                         function updatePopupsm() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
                             $.ajax({
@@ -342,6 +568,35 @@
                         //--Smartwatermeter2-------------------------------------------------
                         
                         const Smartwatermeter2 = L.marker([16.95301, 121.76626], {title: 'Smart water Meter 2',icon: swmicon}).addTo(swmg);
+                        Smartwatermeter2.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Smartwatermeter2.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        
+                        
+                        Smartwatermeter2.bindTooltip("<b>Smartwatermeter 2</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
                         function updatePopupsm2() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
                             $.ajax({
@@ -371,6 +626,33 @@
                         
                         //--Smartwatermeter3-------------------------------------------------
                         const Smartwatermeter3 = L.marker([16.95284, 121.7661], {title: 'Smart water Meter 3',icon: swmicon}).addTo(swmg);
+                        Smartwatermeter3.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Smartwatermeter3.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        Smartwatermeter3.bindTooltip("<b>Smartwatermeter 3</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
                         function updatePopupsm3() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
                             $.ajax({
@@ -399,6 +681,33 @@
                         //----------------------endrequestdatajquery--------------------------
                         //--Smartwatermeter4-------------------------------------------------
                         const Smartwatermeter4 = L.marker([16.95313, 121.76621],{title: 'Smart water Meter 4', icon: swmicon}).addTo(swmg);
+                        Smartwatermeter4.on('mouseover', function (e) {
+                            // Change the size when hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+                                iconSize:     [50, 50], // size of the icon
+                                shadowSize:   [55, 74], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+
+                        Smartwatermeter4.on('mouseout', function (e) {
+                            // Change back to default size when not hovering
+                            this.setIcon(L.icon({
+                                iconUrl: 'image/swm.png',
+                                shadowUrl: 'image/marker-shadow.png',
+
+                                iconSize:     [36, 36], // size of the icon
+                                shadowSize:   [50, 64], // size of the shadow
+                                iconAnchor:   [22, 54], // point of the icon which will correspond to marker's location
+                                shadowAnchor: [40, 62],  // the same for the shadow
+                                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+                            }));
+                        });
+                        Smartwatermeter4.bindTooltip("<b>Smartwatermeter 4</b><br><p style='font-style: italic;'>Click to view the data.....</p>");
                         function updatePopupsm4() {
                             // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
                             $.ajax({
@@ -447,6 +756,7 @@
                             
                             
                         };
+                        
                         //kml file----------------------------------------------
                         var customLayer = L.geoJson(null, {
                             // http://leafletjs.com/reference.html#geojson-style
@@ -470,24 +780,38 @@
                         var customLayer4 = L.geoJson(null, {
                             // http://leafletjs.com/reference.html#geojson-style
                             style: function(feature) {
-                                return { color: 'blue' ,weight: '1' ,stroke: 'true', fillOpacity:'0' };
+                                return { color: 'red' ,weight: '3' ,stroke: 'true', fillOpacity:'0', dashArray: "10 10" };
                             }
                         });
                         var customLayer5 = L.geoJson(null, {
                             style: function(feature) {
-                                return { color: 'green', weight: '1', stroke: 'true', fillOpacity: '1' };
+                                return { color: 'green', weight: 1, stroke: true, fillOpacity: 1 };
                             },
                             onEachFeature: function(feature, layer) {
-                                if (feature.properties && feature.properties.name) {
-                                    // Create a permanent tooltip for each feature
-                                    layer.bindTooltip(feature.properties.name, {
-                                        permanent: true,  // Make the tooltip always visible
-                                        direction: 'center', // Center the tooltip on the feature
-                                        className: 'feature-label' // Custom CSS class for styling
-                                    }).openTooltip();
-                                }
+                                layer.bindPopup(getCustomText(feature));
                             }
                         });
+
+                        function getCustomText(feature) {
+                            // Customize text based on feature properties or any other criteria
+                            // For example, you can concatenate multiple properties, format them, etc.
+                            return "Storm Water Harvesting Facility ";
+                        }
+                        var customLayer6 = L.geoJson(null, {
+                            style: function(feature) {
+                                return { color: '#0f66e9', weight: '2', stroke: 'true', fillOpacity: '0' };
+                            },
+                            // onEachFeature: function(feature, layer) {
+                            //     if (feature.properties && feature.properties.name) {
+                            //         // Create a permanent tooltip for each feature
+                            //         layer.bindTooltip(feature.properties.name, {
+                            //             permanent: true,  // Make the tooltip always visible
+                            //             direction: 'center', // Center the tooltip on the feature
+                            //             className: 'feature-label' // Custom CSS class for styling
+                            //         }).openTooltip();
+                            //     }
+                            // }
+                        });;
                         // maplayers kml--------------------------------------
 
 
@@ -499,56 +823,72 @@
 
                         // const Buildingkml = omnivore.kml('assets/kml/pssm/Building.kml', null, customLayer);
                         //buildings---------------------------------
-                        const Buildingkml = omnivore.kml('assets/kml/pssm/Building.kml').addTo(map);
-
-
                         const isabelakml = omnivore.kml('assets/kml/pssm/Isabela.kml', null, customLayer);
-
+                        isabelakml.bindTooltip("<b>Isabela</b>");
                         const  cauayankml = omnivore.kml('assets/kml/pssm/CauayanCityBoundary.kml', null, customLayer2);
-                        
+                        cauayankml.bindTooltip("<b>Cauayan</b>");
                         const  cabaruanboundary  = omnivore.kml('assets/kml/othermaps/cabaruan boundary.kml', null ,customLayer3).addTo(map);
-
+                        cabaruanboundary.bindTooltip("<b>Cabaruan Boundary</b>");
                         const  CatchmentArea  = omnivore.kml('assets/kml/othermaps/CatchmentArea.kml', null ,customLayer4).addTo(map);
+                        CatchmentArea.bindTooltip("<b>Catchment Area</b>");
 
                         const  SWHF  = omnivore.kml('assets/kml/othermaps/SWHF.kml', null ,customLayer5).addTo(map);
+                        SWHF.bindTooltip("<b>Swim Water Harvesting Facility</b>");
+                        const Buildingkml = omnivore.kml('assets/kml/pssm/Building.kml', null, customLayer6).addTo(map);
+                        Buildingkml.bindTooltip("<b>Builing</b>");
+                    
+                    
 
+                        
+                        
+                    
+                    
+                    
+                    
+                        // const SWHFmarker = L.marker([16.953022677700037, 121.76658860765606]).bindPopup('SWHFStorm Water Harvesting Facility').openPopup().addTo(map);
 
-
+                        // SWHFmarker.on('click', function(e) {
+                        //     map.flyTo(e.latlng, 20);      
+                        // }); 
 
                         
 
                         //---------------------------------------------------
                         //flytomarklocation when clicking the mark event----------
                         Pressuresensor.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         });   
 
                         Pressuresensor2.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         });  
                         Pressuresensor3.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         }); 
                         Pressuresensor4.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         });  
                         //---------------------------------------------------
                         //flytomarklocationsmart watermeter when clicking the mark event------------------------
                         Smartwatermeter.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         });   
                         Smartwatermeter2.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         });  
                         Smartwatermeter3.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         }); 
                         Smartwatermeter4.on('click', function(e) {
-                            map.flyTo(e.latlng, 17);      
+                            map.flyTo(e.latlng, 20);      
                         });   
 
                         //---------------------------------------------------
-
+                        // flygwmw--------------------------------
+                        groundwatermonitoringwell.on('click', function(e) {
+                            map.flyTo(e.latlng, 20);      
+                        });  
+                        // end---------------
 
                         //search box leaflet---------------------------------------
                         
@@ -610,49 +950,72 @@
                             ]
                             };
                             var sensors= {
-                                label: 'Sensors',
-                                selectAllCheckbox: false,
-                        
+                                label: '<span style=" font-size: 20px;">Map Legend</span>',
                                 children: [
                                     {
-                                        label: 'Pressure Sensors',
-                                        collapsed: true,
+                                        label: '<span style=" font-size: 15px;">Sensors</span> ',
                                         selectAllCheckbox: false,
+                                
                                         children: [
-                                            { label: 'PS 1', layer: Pressuresensor },
-                                            { label: 'PS 2', layer: Pressuresensor2 },
-                                            { label: 'PS 3', layer: Pressuresensor3 },
-                                            { label: 'PS 4', layer: Pressuresensor4 },
-                                            /* ... */
-                                        ]
-                                    },
-                                    {
-                                        label: 'Smart Water Meter',
-                                        collapsed: true,
-                                        selectAllCheckbox: false,
-                                        children: [
-                                            { label: 'SWM 1', layer: Smartwatermeter },
-                                            { label: 'SWM 2', layer: Smartwatermeter2 },
-                                            { label: 'SWM 3', layer: Smartwatermeter3 },
-                                            { label: 'SWM 4', layer: Smartwatermeter4 },
-                                            /* ... */
+                                            {
+                                                label: '<span ><img src="image/ps.png" style="width: 22px; margin-right: 2px; margin-left: 2px;" /> Pressure Sensors </span>',
+                                                collapsed: false,
+                                                selectAllCheckbox: false   ,
+                                                layer: psg,
+                                                // children: [
+                                                //     { label: 'PS 1', layer: Pressuresensor, hidden: true },
+                                                //     { label: 'PS 2', layer: Pressuresensor2, hidden: true },
+                                                //     { label: 'PS 3', layer: Pressuresensor3, hidden: true },
+                                                //     { label: 'PS 4', layer: Pressuresensor4, hidden: true },
+                                                //     /* ... */
+                                                // ]
+                                            },
+                                            {
+                                                label: '<span ><img src="image/swm.png" style="width: 22px; margin-right: 2px; margin-left: 2px;" /> Smart Water Meter </span>',
+                                                collapsed: false,
+                                                selectAllCheckbox: false,
+                                                layer: swmg,
+                                                // children: [
+                                                //     { label: 'SWM 1', layer: Smartwatermeter },
+                                                //     { label: 'SWM 2', layer: Smartwatermeter2 },
+                                                //     { label: 'SWM 3', layer: Smartwatermeter3 },
+                                                //     { label: 'SWM 4', layer: Smartwatermeter4 },
+                                                //     /* ... */
+                                                // ]
+                                            },
+                                            {
+                                                label: '<span ><img src="image/Gwmwell.png" style="width: 22px; margin-right: 2px; margin-left: 2px;" /> Ground Water <div style="margin-left:30%"> Monitoring Well</div> </span>',
+                                                collapsed: false,
+                                                selectAllCheckbox: false,
+                                                layer: groundwatermonitoringwell,
+                                                // children: [
+                                                //     { label: 'GWMW', layer: groundwatermonitoringwell },
+                                                //     /* ... */
+                                                // ]
+                                            },
                                         ]
                                     },
                                 ]
+
+                                
                             };
                             var otherlayers= {
                                 // label: 'Other Layers',
                                 // selectAllCheckbox: false,
-                                label: 'Other Layers',
+                                label: '<span style=" font-size: 15px;">Other Layers</span> ',
                                 collapsed: true,
                                 selectAllCheckbox: false,
                                 children: [
                                     { label: 'Buildings CCC Bus station', layer: Buildingkml},
-                                    { label: 'Isabela Boundary', layer: isabelakml},
-                                    { label: 'Cauayan Boundary', layer: cauayankml},
-                                    { label: 'Cabaruan Boundary', layer: cabaruanboundary},
-                                    { label: 'Catchment Area', layer: CatchmentArea},
                                     { label: 'Storm Water Harvesting Facility', layer: SWHF},
+                                    
+                                    { label: 'Catchment Area', layer: CatchmentArea},
+                                    
+                                    { label: 'Cabaruan Boundary', layer: cabaruanboundary},
+                                    
+                                    { label: 'Cauayan Boundary', layer: cauayankml},
+                                    { label: 'Isabela Boundary', layer: isabelakml},
+                                    
                                     
                                     
                                     /* ... */
@@ -691,6 +1054,38 @@
                         //     };
 
 
+                        // Add a base layer to the map
+                            baseTree.children[0].children[0].layer.addTo(map);
+
+                        // Populate the base layers dropdown
+                        var baseLayersDropdown = document.getElementById('baseLayersDropdown');
+                        populateDropdown(baseTree.children[0].children, baseLayersDropdown);
+
+                        // Add event listener to handle dropdown change
+                        baseLayersDropdown.addEventListener('change', function(event) {
+                            var selectedLayerLabel = event.target.value;
+                            var selectedLayer = baseTree.children[0].children.find(layer => layer.label === selectedLayerLabel);
+                            if (selectedLayer) {
+                                // Remove existing base layers
+                                map.eachLayer(function(layer) {
+                                    if (layer instanceof L.TileLayer) {
+                                        map.removeLayer(layer);
+                                    }
+                                });
+                                // Add selected base layer to the map
+                                selectedLayer.layer.addTo(map);
+                            }
+                        });
+
+                        // Function to populate the dropdown with base layers
+                        function populateDropdown(layers, dropdown) {
+                            layers.forEach(function(layer) {
+                                var option = document.createElement('option');
+                                option.textContent = layer.label;
+                                option.value = layer.label;
+                                dropdown.appendChild(option);
+                            });
+                        }
 
 
 
@@ -699,12 +1094,18 @@
 
 
 
-                            var layerControl = L.control.layers.tree(baseTree,[sensors,otherlayers],{
-                                namedToggle: true,
-                                collapsed: false,
+                            // var layerControl = L.control.layers.tree(null,[sensors,otherlayers],{
+                            //     namedToggle: true,
+                            //     collapsed: false,
+                            // }).addTo(map);
+                            
+                            // Create the layer control
+                            var layerControl = L.control.layers.tree(null, [sensors,otherlayers], {
+                            namedToggle: true,
+                            collapsed: false,
                             }).addTo(map);
 
-
+                            // layerControl.getContainer().classList.add('leaflet-dropdown');
 
 
 

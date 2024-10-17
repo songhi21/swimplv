@@ -16,20 +16,31 @@ $.fn.counter = function(start){
   };
 // ____________________end
 function fetchdata() {
+    var idps = $('#hiddenId').val();
+
     if(!requestAllowed) {
         console.log("Requesting data has been stopped due to an earlier error.");
         return;
     }
     // Make an AJAX request to the Laravel route-------getDataSmartmetter-4
     $.ajax({
-        url: '/getDatapsdevicelist-admin',
+        url: '/getDatadevicevalue/'+ idps,
         method: 'GET',
         beforeSend: function() {
+            $("#idps").empty().append('Loading..');
+            $("#devicename").empty().append('Loading..');
+            $("#networktype").empty().append('Loading..');
+
+            $("#status").empty().append('Loading..');
+            $("#receiveTime").empty().append('Loading..');
+            $("#currentValue").empty().append('Loading..');
+            $("#rssi").empty().append('Loading..');
+            $("#power").empty().append('Loading..');
             // Start the loading timer
             this.loadingTimer = setTimeout(function() {
                 console.log("Loading is taking too long. Reloading the page...");
                 location.reload(); // Reload the page
-            }, 30000); // 30 seconds (adjust the threshold as needed)
+            }, 300000); // 30 seconds (adjust the threshold as needed)
         },
         complete: function() {
             // Clear the loading timer
@@ -38,24 +49,15 @@ function fetchdata() {
         success: function(result) {
             var id = $('#hiddenId').val();
 
-            $.each(result.data, function(key, value) {
-                if(value['id'] == id){
-                    
-                    $("#idps").empty().append(value['id']);
-                    $("#devicename").empty().append(`4G`);
-                    $("#networktype").empty().append(`${value['id'] == '233614970' ? 'Pressure Sensor 1 (Bar)' : (value['id'] == '233614971' ? 'Pressure Sensor 2 (Bar)' : (value['id'] == '233614969' ? 'Pressure Sensor 3 (Bar)' : (value['id'] == '233614968' ? 'Pressure Sensor 4 (Bar)' : 'Pressure Sensor')))}`);
-                    // $("#Devicetype").empty().append(value['Devicetype']);
-                    $("#status").empty().append(`${value['status'] == '在线' ? 'online' : 'offline'}`);
-                    $("#receiveTime").empty().append(value['receiveTime']);
-                    $("#currentValue").empty().append(value['currentValue']);
-                    $("#rssi").empty().append(value['rssi']);
-                    $("#power").empty().append(value['power']);
-                    
-                }
+            $("#idps").empty().append(result.data['id']);
+            $("#devicename").empty().append(result.data['devicename']);
+            $("#networktype").empty().append('4G');
 
-                
-
-            });
+            $("#status").empty().append(`${result.data['status'] == '在线' ? 'online' : 'offline'}`);
+            $("#receiveTime").empty().append(result.data['receiveTime']);
+            $("#currentValue").empty().append(result.data['currentValue']);
+            $("#rssi").empty().append(result.data['rssi']);
+            $("#power").empty().append(result.data['power']);
 
             
 
@@ -71,13 +73,16 @@ function fetchdata() {
         error: function(error) {
 
             $('.loading-overlay').hide()
+            setTimeout(fetchdata, 1000);
             console.error('Error fetching data:', error);
+            
 
 
         }
     });
 }
 fetchdata();
+$('#loading-overlay').hide();
 // setInterval(ps1, 1000);
 
 

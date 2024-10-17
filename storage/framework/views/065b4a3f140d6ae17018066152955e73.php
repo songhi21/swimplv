@@ -3,7 +3,12 @@
 
 
 <?php $__env->startSection('content'); ?>
+    
     <div id="map" >
+        <select id="baseLayersDropdown"></select>
+    </div>
+    
+    
 
 <?php $__env->stopSection(); ?>
 

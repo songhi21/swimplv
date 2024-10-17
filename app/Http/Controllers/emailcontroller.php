@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
+use App\Mail\AutoresponderMail;
 
 class emailcontroller extends Controller
 {
@@ -25,6 +26,8 @@ class emailcontroller extends Controller
 
         // Send the email
         Mail::to('project.swim3@isu.edu.ph')->send(new ContactMail($request->all()));
+
+        Mail::to($request->input('email'))->send(new AutoresponderMail());
 
         return response()->json(['success' => true]);
     }

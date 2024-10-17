@@ -1,0 +1,1 @@
+<p>Thank you for contacting us. This is an automated response to let you know that we've received your message and will get back to you as soon as possible.</p><?php /**PATH C:\xampp\htdocs\central-gulp\swimplv\resources\views/emails/autoresponder.blade.php ENDPATH**/ ?>

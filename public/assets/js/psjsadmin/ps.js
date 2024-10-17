@@ -26,6 +26,8 @@ function ps1() {
         method: 'GET',
         beforeSend: function() {
             // Start the loading timer
+            $("#totaldevices").html('loading..');
+            $("#totalonline").html('loading..');
             this.loadingTimer = setTimeout(function() {
                 console.log("Loading is taking too long. Reloading the page...");
                 location.reload(); // Reload the page
@@ -37,45 +39,55 @@ function ps1() {
         },
         success: function(result) {
             let pressureSensorCount = 0;
-            let totalonline = 0;
-
-            $.each(result.data, function(key, value) {
-          
-                if (value.status === '在线') {
-                    totalonline++;
+            let totalOnline = 0;
+            result.data.forEach(function(item) {
+                if (item.status === '在线') {
+                    totalOnline++;
                 }
             });
 
-            // Draw the DataTable
-            // table.draw(false);
-
-            $('#result tbody').on('click', 'a.btn', function() {
-
+            // Animate the counter for total devices
+            $("#totaldevices").prop('Counter', 0).animate({
+                Counter: result.recordsTotal
+            }, {
+                duration: 1000, // Adjust the duration as needed
+                easing: 'swing',
+                step: function(now) {
+                    $(this).text(Math.ceil(now));
+                }
             });
 
-            $("#totaldevices").empty().append(`<h4> ${result.recordsTotal} </h4>`);
-            $("#totalonline").empty().append(`<h4> ${totalonline} </h4>`);
-            // console.log('Number of pressure sensor devices:', totalonline);
+            // Animate the counter for total online devices
+            $("#totalonline").prop('Counter', 0).animate({
+                Counter: totalOnline
+            }, {
+                duration: 1000, // Adjust the duration as needed
+                easing: 'swing',
+                step: function(now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
 
             // Stop further requests if data is displayed
             requestAllowed = false;
-            // $('.loading-overlay').hide()
+            $('.loading-overlay').hide();
         },
         error: function(error) {
             $("#totaldevices").empty().append(`<h4> 0 </h4>`);
             $("#totalonline").empty().append(`<h4> 0 </h4>`);
-            $('.loading-overlay').hide()
+            $('.loading-overlay').hide();
+            setTimeout(ps1, 1000); // Retry after 5 seconds (adjust the delay as needed)
             console.error('Error fetching data:', error);
 
             // alert('Failed to Fetch data. Please try again later');
             // Retry the request after a delay
-            // setTimeout(fetchData, 5000); // Retry after 5 seconds (adjust the delay as needed)
+        
         }
     });
 }
 ps1();
 // setInterval(ps1, 1000);
-
+$('#loading-overlay').hide();
 
 // Fetch data initially
 

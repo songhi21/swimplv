@@ -23,7 +23,7 @@
                                 <div id="totalonline"></div>
                             </div>
                             <div class="col-lg-6 col-xl-6  text-right">
-                                <button type="button" class="btn btn-success" id="exportExcel">Export to Excel</button>
+                                <button type="button" class="btn btn-success" id="exportExcel"><span id="checkboxCount"> 0 </span> Export to Excel</button>
                             </div>
                         </div>
                         
@@ -44,6 +44,7 @@
                                     <tr>
                                         <th><input type="checkbox" id="selectAll"></th>
                                         <th>DeviceId</th>
+                                        <th>DeviceName</th>
                                         <th>NetworkType</th>
                                         <th>Equipmenttype</th>
                                         <th>Onlinestatus</th>

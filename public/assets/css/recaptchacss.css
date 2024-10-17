@@ -1,0 +1,16 @@
+.recaptcha-container {
+    position: relative; /* Make the container position relative */
+    display: inline-block; /* Display the container as inline-block */
+    width: 100%;
+}
+
+#reset-recaptcha {
+    position: absolute; /* Position the button absolutely inside the container */
+    top: 0; /* Align the button to the top */
+    right: 20; /* Align the button to the right */
+    
+}
+.centerbox{
+    position:relative; 
+    margin-left:5%;
+}

@@ -3,6 +3,7 @@ $(document).ready(function() {
     $(window).on("load", function() {
         $("#loading-overlay").fadeOut("slow", function() {
             $("#content").fadeIn("slow");
+    
         });
     });
 });

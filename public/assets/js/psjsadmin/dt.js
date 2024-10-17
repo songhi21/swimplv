@@ -9,8 +9,9 @@ table = $('#result').DataTable({
     "lengthChange": true,
     "columnDefs": [
         // { "orderable": false, "targets": [0, -1] }
-        { "orderable": false, "searchable": true, "targets": "_all" }
+        { "orderable": false, "targets": "_all" }
     ],
+    "searching": false, // Disable searching
     "processing": true,
     "serverSide": true,
     "language": {
@@ -34,9 +35,13 @@ table = $('#result').DataTable({
             
         },
         "error": function(xhr, error, thrown) {
-            console.error('DataTables Ajax error:', error);
-            alert('An error occurred while fetching data. Please try again later.');
             $('.loading-overlay').hide();
+            console.error('DataTables Ajax error:', error);
+            setTimeout(function() {
+                table.ajax.reload();
+            }, 1000);
+            alert('An error occurred while fetching data.');
+            
         }
     },
     "columns": [
@@ -47,6 +52,7 @@ table = $('#result').DataTable({
         //   }
         // },
         { "data": "id" },
+        { "data": "devicename" },
         { "data": null, "defaultContent": "4G" },
         { "data": "Devicetype" },
         { 
@@ -74,71 +80,21 @@ table = $('#result').DataTable({
             
     ]
 });
-// Enable searching for all columns
-$('#dt-search-0').on('keyup', function() {
-    var keyword = $(this).val().toLowerCase();
-    table.search(keyword).draw();
-    console.log(keyword);
-});
 
-
-
-
-
-// table = $('#result').DataTable({
-//     "scrollX": true,
-//     "paging": true, // Enable pagination
-//     "pagingType": "full_numbers", // Show pagination with first, last, previous, and next buttons
-//     "lengthChange": false, 
-//     "columnDefs": [
-//         { "orderable": false, "targets": [0, -1] }
-//     ],
-//     "pageLength": 2,
-//     "processing": true, // Enable DataTables processing indicator
-//     "language": {
-//                 "processing": "Loading data..." // Custom loading message
-//     },
-//     "ajax": {
-//         "url": "/getDatapsdevicelist-admin",
-        
-//         "dataSrc": function(result) {
-
-//             $.each(result, function(key, value) {
-//                 var rowData = [
-//                     '<input type="checkbox" class="row-checkbox">',
-//                     `${value['id']}`, // ID
-//                     `4G`, // Network Type (static value "4G")
-//                     `${value['Devicetype']}`, // Equipment type
-//                     `${value['status'] == '在线' ? 'online' : 'offline'}`, // Online status
-//                     `${value['receiveTime']}`, // Update time
-//                     `${value['currentValue']}`, // Measurements
-//                     `${value['rssi']}`, // Signal Strength
-//                     `${value['power']}`, // Battery Voltage
-//                     '<a href="#" class="btn btn-primary btn-block">Check</a>' // Action button
-//                 ];
-
-//                 // Add the row to the DataTable
-//                 table.row.add(rowData);
-//             });
-
-//             // Update any other UI elements or perform additional tasks as needed
-//             // $("#totaldevices").empty().append(`<h4> Total number of Devices: ${pressureSensorCount} </h4>`);
-//             // $("#totalonline").empty().append(`<h4> Number of Online Devices: ${totalonline} </h4>`);
-
-//             return result; // Return the data to DataTables
-//         },
-//         "error": function(xhr, error, thrown) {
-//             console.error('DataTables Ajax error:', error);
-//             alert('An error occurred while fetching data. Please try again later.');
-//         }
-//     }
+// Reload data if an error occurs
+// $('#result').on('error.dt', function(e, settings, techNote, message) {
     
 // });
-// Fetch data via AJAX and populate DataTable
 
-// Select/Deselect all checkboxes
 $('#selectAll').on('change', function() {
     $('.row-checkbox').prop('checked', $(this).prop('checked'));
+    if($(this).prop('checked')){
+        var count = $('.row-checkbox:checked').length;
+        $('#checkboxCount').text(count);
+    }
+    else{
+        $('#checkboxCount').text('0');
+    }
 });
 
 // Export selected rows to Excel
@@ -175,7 +131,26 @@ $('#exportExcel').on('click', function() {
     }
 });
 
+// Event handler for length and draw events of the DataTable
+$('#result').on('length.dt draw.dt', function(e, settings, len) {
+    // Reset the count to 0 when the length changes
+    $('#checkboxCount').text('0'); // Set the count to 0
+    $('#selectAll').prop('checked', false); // Uncheck the "Select All" checkbox
+    $('.row-checkbox').prop('checked', false); // Uncheck all row checkboxes
+});
 
+// Event listener for changes in row checkboxes
+$(document).on('change', '.row-checkbox', function() {
+    var isChecked = $(this).prop('checked'); // Check if the checkbox is checked
+    var count = $('.row-checkbox:checked').length; // Count the number of checked row checkboxes
+    if (isChecked) {
+        $('#checkboxCount').text(count); // Update the count if the checkbox is checked
+    } else {
+        $('#checkboxCount').text($('.row-checkbox:checked').length); // Update the count if the checkbox is unchecked
+    }
+});
+
+$('#loading-overlay').hide();
 // Highlight selected rows
 // $('#result tbody').on('click', 'tr', function() {
 //     $(this).toggleClass('selected');

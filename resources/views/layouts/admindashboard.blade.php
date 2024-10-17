@@ -129,6 +129,17 @@
 <script src="js/maps/smartwatermeter.js"></script>
 <script src="assets/js/fetch/gauge.min.js"></script>
 <script src="js/maps/PS.js"></script>
+<script src="js/maps/Ph.js"></script>
+<script src="js/maps/tempofph.js"></script>
+<script src="js/maps/conductivity.js"></script>
+<script src="js/maps/tds.js"></script>
+<script src="js/maps/sanity.js"></script>
+<script src="js/maps/totds.js"></script>
+<script src="js/maps/levelsensor.js"></script>
+
+
+
+
 <script>
 
   

@@ -22,6 +22,9 @@ $.ajax({
                     container.append("<h2>" + value['title'] + "</h2>"+"</br>");
                     container.append("<strong>" + value['location'] + "</strong>");
                     container.append("<p>" + value['description'] + "</p>");
+                    container.append("<div style='display: flex; justify-content: flex-end;'><a class='button-49' role='button' href='" + value['link'] + "' download target='_blank'>Download</a></div>");
+
+
                 }
             
                 // console.log(value);
