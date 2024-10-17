@@ -68,7 +68,6 @@ class pressuresensorControlleradmin extends Controller
     public function getDatadevicelist(Request $request)
     {
         try {
-            // Retrieve parameters sent by DataTables
             $start = $request->input('start');
             $length = $request->input('length');
             $searchValue = $request->input('search.value'); // Get the search term
