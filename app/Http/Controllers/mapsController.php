@@ -956,8 +956,8 @@ class mapsController extends Controller
 
     // Temperature of TDS-----------------------------------end
     public function getlecelsensorvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = '';
+        $clientSecret = '';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
@@ -1031,8 +1031,8 @@ class mapsController extends Controller
     // level sensor---------------------------------------------start
 
     public function getlevelsensorvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = '';
+        $clientSecret = '';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
