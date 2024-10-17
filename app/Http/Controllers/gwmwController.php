@@ -196,8 +196,8 @@ class gwmwController extends Controller
     public function getalldevicecounttotal(Request $request)
     {
         // Define static values
-        define('DEVICE_IDs', '254718');
-        define('DEVICE_NOs', 'M8091G4NJ67LK54N');
+        define('DEVICE_IDs', '');
+        define('DEVICE_NOs', '');
         define('CURR_PAGEs', '1');
         define('PAGE_SIZEs', '10');
 
@@ -263,8 +263,8 @@ class gwmwController extends Controller
     {
         try {
             // Encode clientId and secret in Base64 format
-            $clientId = '757c27c0bac14d3992a553daadc0b918';
-            $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+            $clientId = '';
+            $clientSecret = '';
             $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
             // Define the API endpoint to obtain access token
