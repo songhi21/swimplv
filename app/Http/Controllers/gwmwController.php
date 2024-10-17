@@ -202,8 +202,8 @@ class gwmwController extends Controller
         define('PAGE_SIZEs', '10');
 
         // Encode clientId and secret in Base64 format
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = 'this is not the actual http request address or value';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token

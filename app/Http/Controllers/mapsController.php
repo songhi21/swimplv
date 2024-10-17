@@ -304,7 +304,7 @@ class mapsController extends Controller
     public function getphhistoricalvalue(Request $request)
     {
         // Encode clientId and secret in Base64 format
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
+        $clientId = 'this is not the actual http request address or value';
         $clientSecret = 'this is no the actual value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
