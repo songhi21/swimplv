@@ -158,10 +158,10 @@ class pressuresensorControlleradmin extends Controller
     private function getDeviceName($deviceId)
     {
         $deviceNames = [
-            '233614970' => 'Pressure Sensor 1 (Bar)',
-            '233614971' => 'Pressure Sensor 2 (Bar)',
-            '233614969' => 'Pressure Sensor 3 (Bar)',
-            '233614968' => 'Pressure Sensor 4 (Bar)'
+            'this is not the actual http request address or value' => 'Pressure Sensor 1 (Bar)',
+            'this is not the actual http request address or value' => 'Pressure Sensor 2 (Bar)',
+            'this is not the actual http request address or value' => 'Pressure Sensor 3 (Bar)',
+            'this is not the actual http request address or value' => 'Pressure Sensor 4 (Bar)'
         ];
         return $deviceNames[$deviceId] ?? '';
     }

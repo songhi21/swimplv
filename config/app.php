@@ -124,7 +124,7 @@ return [
 
     'key' => env('APP_KEY'),
 
-    'cipher' => 'AES-256-CBC',
+    'cipher' => 'this is not the actual http request address or value',
 
     /*
     |--------------------------------------------------------------------------

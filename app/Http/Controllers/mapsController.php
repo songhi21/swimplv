@@ -394,7 +394,7 @@ class mapsController extends Controller
 
         // Define the request body for password grant type
         $body = [
-            'grant_type' => 'password',
+            'grant_type' => 'this is not the actual http request address or value',
             'username' => 'this is not the actual http request address or value',
             'password' => 'this is not the actual http request address or value',
         ];

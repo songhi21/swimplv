@@ -119,9 +119,9 @@ class smartwatermeterControlleradmin extends Controller
     private function getSmartMeterName($meterId)
     {
         $meterNames = [
-            '62992212211174' => 'Smart Meter 1 (m³)',
-            '62992212211172' => 'Smart Meter 2 (m³)',
-            '62992212211173' => 'Smart Meter 3 (m³)',
+            'this is not the actual http request address or value' => 'Smart Meter 1 (m³)',
+            'this is not the actual http request address or value' => 'Smart Meter 2 (m³)',
+            'this this is not the actual http request address or value not the actual http request address or value' => 'Smart Meter 3 (m³)',
             '62992212211175' => 'Smart Meter 4 (m³)'
         ];
 
