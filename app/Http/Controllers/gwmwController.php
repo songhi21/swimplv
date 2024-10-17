@@ -78,7 +78,7 @@ class gwmwController extends Controller
     {
                 // Define static values
         define('DEVICE_ID', '254718');
-        define('DEVICE_NO', 'M8091G4NJ67LK54N');
+        define('DEVICE_NO', 'this is not the actual http request address or value');
 
         /**
          * Function to obtain access token.
@@ -87,12 +87,12 @@ class gwmwController extends Controller
          */
         function getAccessToken() {
             // Encode clientId and secret in Base64 format
-            $clientId = '757c27c0bac14d3992a553daadc0b918';
-            $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+            $clientId = 'this is not the actual http request address or value';
+            $clientSecret = 'this is not the actual http request address or value';
             $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
             // Define the API endpoint to obtain access token
-            $url = 'https://app.dtuip.com/oauth/token';
+            $url = 'this is not the actual http request address or value';
 
             // Define the request headers
             $headers = [
@@ -103,8 +103,8 @@ class gwmwController extends Controller
             // Define the request body for password grant type
             $body = [
                 'grant_type' => 'password',
-                'username' => 'Smart Water Infrastructure Management',
-                'password' => 'swim1234',
+                'username' => 'this is not the actual http request address or value',
+                'password' => 'this is not the actual http request address or value',
             ];
 
             // Make the request to obtain access token
@@ -143,7 +143,7 @@ class gwmwController extends Controller
             ];
 
             // Make the API request to fetch sensor data using the access token
-            $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('https://app.dtuip.com/api/device/getSingleDeviceDatas', $sensorDataBody);
+            $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('this is not the actual http request address or value', $sensorDataBody);
 
             // Return sensor data or false on failure
             return $sensorDataResponse->successful() ? $sensorDataResponse->json() : false;
@@ -207,7 +207,7 @@ class gwmwController extends Controller
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address or value';
 
         // Define the request headers
         $headers = [
@@ -218,8 +218,8 @@ class gwmwController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -250,7 +250,7 @@ class gwmwController extends Controller
         ];
 
         // Make the API request to fetch sensor data using the access token
-        $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('https://app.dtuip.com/api/device/getSingleDeviceDatas', $sensorDataBody);
+        $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('this is not the actual http request address or value', $sensorDataBody);
         // Check if the sensor data request was successful
         if (!$sensorDataResponse->successful()) {
             return $this->errorResponse('Failed to fetch single device data.', $sensorDataResponse->status());
@@ -268,7 +268,7 @@ class gwmwController extends Controller
             $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
             // Define the API endpoint to obtain access token
-            $url = 'https://app.dtuip.com/oauth/token';
+            $url = 'this is not the actual http request address or value';
 
             // Define the request headers
             $headers = [
@@ -279,8 +279,8 @@ class gwmwController extends Controller
             // Define the request body for password grant type
             $body = [
                 'grant_type' => 'password',
-                'username' => 'Smart Water Infrastructure Management',
-                'password' => 'swim1234',
+                'username' => 'this is not the actual http request address or value',
+                'password' => 'this is not the actual http request address or value',
             ];
 
             // Make the request to obtain access token
@@ -296,7 +296,7 @@ class gwmwController extends Controller
                 $tokenType = $data['token_type'];
 
                 // Define the API endpoint to get sensor history
-                $historyUrl = 'https://app.dtuip.com/api/device/getSensorHistroy';
+                $historyUrl = 'this is not the actual http request address or value';
 
                 // Define the request headers for historical data
                 $historyHeaders = [
@@ -369,130 +369,14 @@ class gwmwController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
-    // public function getsinglevaluehistorydevices(Request $request, $id)
-    // {
-    //                 // Define static values
-    //                 define('DEVICE_ID2', '254718');
-    //                 define('DEVICE_NO2', 'M8091G4NJ67LK54N');
-            
-    //                 /**
-    //                  * Function to obtain access token.
-    //                  *
-    //                  * @return array|false Access token data or false on failure
-    //                  */
-    //                 function getAccessToken2() {
-    //                     // Encode clientId and secret in Base64 format
-    //                     $clientId = '757c27c0bac14d3992a553daadc0b918';
-    //                     $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
-    //                     $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
-            
-    //                     // Define the API endpoint to obtain access token
-    //                     $url = 'https://app.dtuip.com/oauth/token';
-            
-    //                     // Define the request headers
-    //                     $headers = [
-    //                         'Content-Type' => 'text/plain',
-    //                         'Authorization' => 'Basic ' . $base64ClientIdSecret,
-    //                     ];
-            
-    //                     // Define the request body for password grant type
-    //                     $body = [
-    //                         'grant_type' => 'password',
-    //                         'username' => 'Smart Water Infrastructure Management',
-    //                         'password' => 'swim1234',
-    //                     ];
-            
-    //                     // Make the request to obtain access token
-    //                     $response = Http::withHeaders($headers)->get($url, $body);
-            
-    //                     // Return access token data or false on failure
-    //                     return $response->successful() ? $response->json() : false;
-    //                 }
-            
-    //                 /**
-    //                  * Function to fetch sensor data.
-    //                  *
-    //                  * @param array $accessToken Access token data
-    //                  * @param int $currPage Current page number
-    //                  * @param int $pageSize Page size
-    //                  * @return array|false Sensor data or false on failure
-    //                  */
-    //                 function fetchSensorData2($accessToken, $currPage, $pageSize) {
-    //                     if (!$accessToken) {
-    //                         return false;
-    //                     }
-            
-    //                     // Construct the headers and body for the sensor data request
-    //                     $sensorDataHeaders = [
-    //                         'Content-Type' => 'application/json',
-    //                         'Authorization' => $accessToken['token_type'] . ' ' . $accessToken['access_token'],
-    //                         'tlinkAppId' => $accessToken['clientId'],
-    //                     ];
-            
-    //                     $sensorDataBody = [
-    //                         'userId' => $accessToken['userId'],
-    //                         'deviceId' => DEVICE_ID2,
-    //                         'deviceNo' => DEVICE_NO2,
-    //                         'currPage' => $currPage,
-    //                         'pageSize' => $pageSize,
-    //                     ];
-            
-    //                     // Make the API request to fetch sensor data using the access token
-    //                     $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('https://app.dtuip.com/api/device/getSingleDeviceDatas', $sensorDataBody);
-                        
-    //                     // Return sensor data or false on failure
-    //                     return $sensorDataResponse->successful() ? $sensorDataResponse->json() : false;
-    //                 }
-            
-    //                 // Get current page and page size from the request
-    //                 $currPage = $request->input('currPage', 1);
-    //                 $pageSize = $request->input('pageSize', 10);
-            
-    //                 // Obtain access token
-    //                 $accessToken = getAccessToken2();
-            
-    //                 // Check if access token retrieval failed
-    //                 if (!$accessToken) {
-    //                     return $this->errorResponse('Failed to obtain access token.');
-    //                 }
-            
-    //                 // Fetch sensor data
-    //                 $sensorData = fetchSensorData2($accessToken, $currPage, $pageSize);
-            
-    //                 // Check if sensor data retrieval failed
-    //                 if (!$sensorData) {
-    //                     return $this->errorResponse('Failed to fetch sensor data.');
-    //                 }
-            
-    //                 // Parse sensor data and return the response
-
-    //                 $sensorList = array_map(function ($item) use ($id) {
-    //                     if($id == $item['id']){
-    //                         return [
-    //                             'id' => $item['id'],
-    //                             'sensorName' => $item['sensorName'],
-    //                             'unit' => $item['unit'],
-    //                             'updateDate' =>  date('F d, Y, h:ia', strtotime($item['updateDate'])),
-    //                             'value' => $item['value'],
-    //                         ];
-    //                     }
-                        
-    //                 }, $sensorData['device']['sensorsList']);
-    //                 // Return the response
-    //                 return response()->json([
-    //                     "draw" => intval($request->input('draw')),
-    //                     "recordsTotal" => count($sensorList), // Total records without filtering
-    //                     "recordsFiltered" => count($sensorList), // Total records with filtering (assuming no filtering is done here)
-    //                     "data" => $sensorList
-    //                 ]);
-    // }
+    
 
 
     public function getsinglevaluehistorydevices(Request $request, $id)
     {
         // Define static values
-        define('DEVICE_ID2', '254718');
-        define('DEVICE_NO2', 'M8091G4NJ67LK54N');
+        define('DEVICE_ID2', 'this is not the actual http request address or value');
+        define('DEVICE_NO2', 'this is not the actual http request address or value');
     
         // Get current page and page size from the request
         $currPage = $request->input('currPage', 1);
@@ -546,12 +430,12 @@ class gwmwController extends Controller
 private function getAccessToken()
 {
     // Encode clientId and secret in Base64 format
-    $clientId = '757c27c0bac14d3992a553daadc0b918';
-    $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+    $clientId = 'this is not the actual http request address or value';
+    $clientSecret = 'this is not the actual http request address or value';
     $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
     // Define the API endpoint to obtain access token
-    $url = 'https://app.dtuip.com/oauth/token';
+    $url = 'this is not the actual http request address or value';
 
     // Define the request headers
     $headers = [
@@ -562,8 +446,8 @@ private function getAccessToken()
     // Define the request body for password grant type
     $body = [
         'grant_type' => 'password',
-        'username' => 'Smart Water Infrastructure Management',
-        'password' => 'swim1234',
+        'username' => 'this is not the actual http request address or value',
+        'password' => 'this is not the actual http request address or value',
     ];
 
     // Make the request to obtain access token
@@ -603,7 +487,7 @@ private function fetchSensorData($accessToken, $currPage, $pageSize)
     ];
 
     // Make the API request to fetch sensor data using the access token
-    $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('https://app.dtuip.com/api/device/getSingleDeviceDatas', $sensorDataBody);
+    $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('this is not the actual http request address or value', $sensorDataBody);
     
     // Return sensor data or false on failure
     return $sensorDataResponse->successful() ? $sensorDataResponse->json() : false;

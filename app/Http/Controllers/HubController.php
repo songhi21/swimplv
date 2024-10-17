@@ -60,22 +60,7 @@ class HubController extends Controller
             'name' => 'required|regex:/^[a-zA-Z0-9- -]+$/u|max:255',
             'link' => 'required|max:255'
         ]);
-        // $validator = Validator::make($request->all(), [
-        //     'namehub' => 'required|max:255',
-        //     'linkhub' => 'required|max:255'
-        // ]);
 
-        // if ($validator->fails()) {
-        //     // return $validator->errors()->with('success','Submitted successfully');
-        //     return back()->withErrors($validator, 'error');
-        // } else {
-        //     $hub = new hub;
-        //     $hub->name = $request->namehub;
-        //     $hub->link = $request->linkhub;
-        //     $hub->save();
-
-        //     return back()->with('success','Submitted successfully');
-        // }
         if(Auth::check()){
             if(Auth::user()->type == "Admin"){
                 $hub = new hub;

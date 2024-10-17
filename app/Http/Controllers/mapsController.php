@@ -17,33 +17,7 @@ class mapsController extends Controller
     {
         
 
-        // try {
-        //     //ps1233614970---------------------------------------
-        //     $ps1233614970 = Http::get('http://111.19.141.81:8089/a/api/device?appkey=a46fa5b580fb44dba690c545e7a24371&secret=E8iR5ph8SCBXjwQSGkPT7NQPPXQTZvoH&deviceid=233614970');
-        
-        //     if($ps1233614970['msg'] == 'success'){
-        //         $validationps1233614970 = $ps1233614970['msg'];
-        //         $ps1233614970 = json_decode($ps1233614970, true);
-               
-        //     }
-        //     else{
-        //         $validationps1233614970 = 'error';
-        //     }
-        // }
-        // catch(\Exception $e) {
-        //     $validationps1233614970 = 'error';
-        // }
-        //ps1
-        // if($validationps1233614970  == "success"){
-        //     $dataps1 = $ps1233614970['data']+['error' => 'success'];
-
-        // }
-        // else{
-        //     $dataps1 = ['error' => 'error'];
-
-
-        // }
-
+        /
 
 
         //- return value to maps page-------------------------------------
@@ -116,7 +90,7 @@ class mapsController extends Controller
 
         // Fetch your data from the server or database
 
-        $ps1233614970 = Http::get('http://111.19.141.81:8089/a/api/device?appkey=a46fa5b580fb44dba690c545e7a24371&secret=E8iR5ph8SCBXjwQSGkPT7NQPPXQTZvoH&deviceid=233614970');
+        $ps1233614970 = Http::get('this is not the actual http request address');
         
 
         // $validationps1233614970 = $ps1233614970['msg'];
@@ -130,7 +104,7 @@ class mapsController extends Controller
     {
         // Fetch your data from the server or database
 
-        $ps2233614971 = Http::get('http://111.19.141.81:8089/a/api/device?appkey=a46fa5b580fb44dba690c545e7a24371&secret=E8iR5ph8SCBXjwQSGkPT7NQPPXQTZvoH&deviceid=233614971');
+        $ps2233614971 = Http::get('this is not the actual http request address');
         
 
         $ps2233614971 = json_decode($ps2233614971, true);
@@ -143,7 +117,7 @@ class mapsController extends Controller
     {
         // Fetch your data from the server or database
 
-        $ps3233614969 = Http::get('http://111.19.141.81:8089/a/api/device?appkey=a46fa5b580fb44dba690c545e7a24371&secret=E8iR5ph8SCBXjwQSGkPT7NQPPXQTZvoH&deviceid=233614969');        
+        $ps3233614969 = Http::get('this is not the actual http request address');        
 
         $ps3233614969 = json_decode($ps3233614969, true);
         $dataps3 = ['deviceid'=> $ps3233614969['data']['id'],'currentValue'=> $ps3233614969['data']['currentValue'],'status'=> $ps3233614969['data']['status'], 'preUnits'=> $ps3233614969['data']['preUnits'],  'CommunicationTime'=>  date('F d, Y, h:ia  ', strtotime($ps3233614969['data']['receiveTime']))];
@@ -156,7 +130,7 @@ class mapsController extends Controller
     {
         // Fetch your data from the server or database
 
-        $articlesps4 = Http::get('http://111.19.141.81:8089/a/api/device?appkey=a46fa5b580fb44dba690c545e7a24371&secret=E8iR5ph8SCBXjwQSGkPT7NQPPXQTZvoH&deviceid=233614968');
+        $articlesps4 = Http::get('this is not the actual http request address');
 
         $ps4233614968 = json_decode($articlesps4, true);
         $dataps4 = ['deviceid'=> $ps4233614968['data']['id'],'currentValue'=> $ps4233614968['data']['currentValue'],'status'=> $ps4233614968['data']['status'], 'preUnits'=> $ps4233614968['data']['preUnits'],  'CommunicationTime'=>  date('F d, Y, h:ia  ', strtotime($ps4233614968['data']['receiveTime']))];
@@ -180,8 +154,8 @@ class mapsController extends Controller
         // Fetch your data from the server or database
         $client = new Client();
 
-        $responseas =  $client->get('http://47.103.146.199:6071/WebHttpApi_EN/TYGetMeterData.ashx', [
-                        "body" => "{'MeterIdList':['62992212211174'],'UserName':'EBC','PassWord':'123456'}"
+        $responseas =  $client->get('this is not the actual http request address', [
+                        "body" => "{'this is not the actual http request address'}"
                     ]);
         $output =  json_decode($responseas->getBody()->getContents(), true);
         $swm = $output['MeterDataList'];
@@ -196,8 +170,8 @@ class mapsController extends Controller
         // Fetch your data from the server or database
         $client2 = new Client();
         
-        $responseas2 =  $client2->get('http://47.103.146.199:6071/WebHttpApi_EN/TYGetMeterData.ashx', [
-                        "body" => "{'MeterIdList':['62992212211172'],'UserName':'EBC','PassWord':'123456'}"
+        $responseas2 =  $client2->get('this is not the actual http request address', [
+                        "body" => "{'this is not the actual http request address'}"
                     ]);
         $output2 =  json_decode($responseas2->getBody()->getContents(), true);
         $swm2 = $output2['MeterDataList'];
@@ -214,8 +188,8 @@ class mapsController extends Controller
 
         $client3 = new Client();
 
-        $responseas3 =  $client3->get('http://47.103.146.199:6071/WebHttpApi_EN/TYGetMeterData.ashx', [
-                        "body" => "{'MeterIdList':['62992212211173'],'UserName':'EBC','PassWord':'123456'}"
+        $responseas3 =  $client3->get('this is not the actual http request address', [
+                        "body" => "{'this is not the actual http request address'}"
                     ]);
         $output3 =  json_decode($responseas3->getBody()->getContents(), true);
         $swm3 = $output3['MeterDataList'];
@@ -232,8 +206,8 @@ class mapsController extends Controller
 
         $client4 = new Client();
     
-        $responseas4 =  $client4->get('http://47.103.146.199:6071/WebHttpApi_EN/TYGetMeterData.ashx', [
-                        "body" => "{'MeterIdList':['62992212211175'],'UserName':'EBC','PassWord':'123456'}"
+        $responseas4 =  $client4->get('this is not the actual http request address', [
+                        "body" => "{'this is not the actual http request address'}"
                     ]);
         $output4 =  json_decode($responseas4->getBody()->getContents(), true);
         $swm4 = $output4['MeterDataList'];
@@ -243,126 +217,7 @@ class mapsController extends Controller
 
         return response()->json($dataswm4);
     }
-    // public function getDataSmartmetter4search()
-    // {
-    //     // Fetch your data from the server or database
-
-    //     $client4 = new Client();
     
-    //     $responseas4 =  $client4->get('http://47.103.146.199:6071/WebHttpApi_EN/TYGetMeterData.ashx', [
-    //                     "body" => "{'MeterIdList':['62992212211175'],'UserName':'EBC','PassWord':'123456'}"
-    //                 ]);
-    //     $output4 =  json_decode($responseas4->getBody()->getContents(), true);
-    //     $swm4 = $output4['MeterDataList'];
-    
-    
-    //     $dataswm4 = ['PositiveCumulativeFlow'=> $swm4[0]['PositiveCumulativeFlow'],'CommunicationTime'=> date('F d, Y, h:ia  ', strtotime($swm4[0]['CommunicationTime'])),'error'=> 'success'];
-    //     // 'MeterId'=> $swm4[0]['MeterId'],
-    //     return view('maps',contains('dataswm4'));
-    // }
-    // public function cctv(){
-    //     $MAC = exec('44:01:bb:a8:76:e4'); 
-  
-    //     // Storing 'getmac' value in $MAC 
-    //     $MAC = strtok($MAC, ' '); 
-        
-    //     // Updating $MAC value using strtok function,  
-    //     // strtok is used to split the string into tokens 
-    //     // split character of strtok is defined as a space 
-    //     // because getmac returns transport name after 
-    //     // MAC address    
-    //     echo "MAC address of Server is: $MAC"; 
-
-    // }
-    // public function getSingleDeviceDatawell(Request $request)
-    // {
-    //     // Encode clientId and secret in Base64 format
-    //     $clientId = '757c27c0bac14d3992a553daadc0b918';
-    //     $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
-    //     $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
-
-    //     // Define the API endpoint to obtain access token
-    //     $url = 'https://app.dtuip.com/oauth/token';
-
-    //     // Define the request headers
-    //     $headers = [
-    //         'Content-Type' => 'text/plain',
-    //         'Authorization' => 'Basic ' . $base64ClientIdSecret,
-    //     ];
-
-    //     // Define the request body for password grant type
-    //     $body = [
-    //         'grant_type' => 'password',
-    //         'username' => 'Smart Water Infrastructure Management',
-    //         'password' => 'swim1234',
-    //     ];
-
-    //     // Make the request to obtain access token
-    //     $response = Http::withHeaders($headers)->get($url, $body);
-    
-    //     // Check if the request was successful
-    //     if ($response->successful()) {
-    //         // Parse the JSON response
-    //         $data = $response->json();
-        
-    //         // Extract the access token
-    //         $accessToken = $data['access_token'];
-    //         $clientid = $data['clientId'];
-    //         $token_type = $data['token_type'];
-    //         $refresh_token = $data['refresh_token'];
-    //         $expires_in = $data['expires_in'];
-    //         $scope = $data['scope'];
-    //         $clientSecret = $data['clientSecret'];
-    //         $userId = $data['userId'];
-
-    //         // Use the access token to fetch sensor data
-    //         // Construct the headers and body for the sensor data request
-    //         $sensorDataHeaders = [
-    //             'Content-Type' => 'application/json',
-    //             'Authorization' => $token_type.' ' . $accessToken,
-    //             'tlinkAppId' => $clientid,
-    //         ];
-        
-    //         $sensorDataBody = [
-    //             'userId' => $userId,
-    //             'deviceId' => '254718',
-    //             'deviceNo' => 'M8091G4NJ67LK54N',
-    //             'currPage' => '1',
-    //             'pageSize' => '10',
-    //         ];
-
-    //         // Make the API request to fetch sensor data using the access token
-    //         $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('https://app.dtuip.com/api/device/getSingleDeviceDatas', $sensorDataBody);
-
-    //         // Check if the sensor data request was successful
-    //         if ($sensorDataResponse->successful()) {
-    //             // Parse the JSON response
-    //             $sensorData = $sensorDataResponse->json();
-    //             $gmw = $sensorData['device']['sensorsList'];
-    //             // Return the sensor data response
-
-    //             $resultgmw = [];
-
-    //             // Loop through each object in the JSON array
-    //             foreach ($gmw as $item) {
-    //                 // Extract the deviceId and add it to the deviceIds array
-    //                 $resultgmw[] = ['id' => $item['id'],'sensorName' => $item['sensorName'],'unit' => $item['unit'],'updateDate' => $item['updateDate'],'value' => $item['value']];
-    //             }
-    //             return response()->json($resultgmw);
-    //         } else {
-    //             // Return an error response for sensor data request
-    //             return response()->json([
-    //                 'error' => 'Failed to fetch single device data.'
-    //             ], $sensorDataResponse->status());
-    //         }
-    //     } else {
-    //         // Return an error response for access token request
-    //         return response()->json([
-    //             'error' => 'Failed to obtain access token.'
-    //         ], $response->status());
-    //     }
-    // }
-    // alldevices gwmw---------------------
     public function getSingleDeviceDatawell(Request $request)
     {
         // Define static values
@@ -420,7 +275,7 @@ class mapsController extends Controller
         ];
 
         // Make the API request to fetch sensor data using the access token
-        $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('https://app.dtuip.com/api/device/getSingleDeviceDatas', $sensorDataBody);
+        $sensorDataResponse = Http::withHeaders($sensorDataHeaders)->post('this is not the actual http request address', $sensorDataBody);
 
         // Check if the sensor data request was successful
         if (!$sensorDataResponse->successful()) {
@@ -452,11 +307,11 @@ class mapsController extends Controller
     {
         // Encode clientId and secret in Base64 format
         $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientSecret = 'this is no the actual value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address';
 
         // Define the request headers
         $headers = [
@@ -484,7 +339,7 @@ class mapsController extends Controller
             $accessToken = $data['access_token'];
             $tokenType = $data['token_type'];
             // Define the API endpoint to get sensor history
-            $historyUrl = 'https://app.dtuip.com/api/device/getSensorHistroy';
+            $historyUrl = 'this is not the actual http request address';
 
             // Define the request headers for historical data
             $historyHeaders = [
@@ -531,7 +386,7 @@ class mapsController extends Controller
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address';
 
         // Define the request headers
         $headers = [
@@ -560,7 +415,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = 'this is not the actual http request address';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
@@ -604,11 +459,11 @@ class mapsController extends Controller
     {
         // Encode clientId and secret in Base64 format
         $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientSecret = 'this is not the actual http request address';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address';
 
         // Define the request headers
         $headers = [
@@ -619,8 +474,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address',
+            'password' => 'this is not the actual http request address',
         ];
 
         // Make the request to obtain access token
@@ -636,7 +491,7 @@ class mapsController extends Controller
             $accessToken = $data['access_token'];
             $tokenType = $data['token_type'];
             // Define the API endpoint to get sensor history
-            $historyUrl = 'https://app.dtuip.com/api/device/getSensorHistroy';
+            $historyUrl = 'this is not the actual http request address';
 
             // Define the request headers for historical data
             $historyHeaders = [
@@ -686,11 +541,11 @@ class mapsController extends Controller
 
     public function getTemperatureofPHvalue(Request $request){
         $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address';
 
         // Define the request headers
         $headers = [
@@ -701,8 +556,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -719,7 +574,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = 'this is not the actual http request address or value';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
@@ -778,12 +633,12 @@ class mapsController extends Controller
     // Conductivity-------------------------------
 
     public function getConductivityvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = 'this is not the actual http request address or value';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address or value';
 
         // Define the request headers
         $headers = [
@@ -812,7 +667,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = 'this is not the actual http request address or value';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
@@ -857,12 +712,12 @@ class mapsController extends Controller
 
     // TDS-----------------------------------start
     public function gettdsvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = 'this is not the actual http request address or value';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address or value';
 
         // Define the request headers
         $headers = [
@@ -873,8 +728,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -935,12 +790,12 @@ class mapsController extends Controller
 
 
     public function getsalinityvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = 'this is not the actual http request address or value';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address or value';
 
         // Define the request headers
         $headers = [
@@ -950,9 +805,9 @@ class mapsController extends Controller
 
         // Define the request body for password grant type
         $body = [
-            'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'grant_type' => 'this is not the actual http request address or value',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -969,7 +824,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = 'this is not the actual http request address or value';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
@@ -981,7 +836,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => 3885869, // Replace with the actual sensor ID
+                'sensorId' => this is not the actual http request address or value, // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);

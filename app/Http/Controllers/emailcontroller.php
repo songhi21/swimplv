@@ -25,7 +25,7 @@ class emailcontroller extends Controller
         ]);
 
         // Send the email
-        Mail::to('project.swim3@isu.edu.ph')->send(new ContactMail($request->all()));
+        Mail::to('this is not the actual http request address or value')->send(new ContactMail($request->all()));
 
         Mail::to($request->input('email'))->send(new AutoresponderMail());
 
