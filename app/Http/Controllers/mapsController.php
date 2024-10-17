@@ -647,8 +647,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -972,8 +972,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -1036,7 +1036,7 @@ class mapsController extends Controller
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address or value';
 
         // Define the request headers
         $headers = [
@@ -1047,8 +1047,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -1065,7 +1065,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = 'this is not the actual http request address or value';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
