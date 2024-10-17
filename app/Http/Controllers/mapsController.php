@@ -17,8 +17,6 @@ class mapsController extends Controller
     {
         
 
-        /
-
 
         //- return value to maps page-------------------------------------
         return view('maps');
@@ -227,12 +225,12 @@ class mapsController extends Controller
         define('PAGE_SIZE', '10');
 
         // Encode clientId and secret in Base64 format
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = 'this is not the actual http request address or value';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address or value';
 
         // Define the request headers
         $headers = [
@@ -243,8 +241,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -322,8 +320,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or valuet',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -381,8 +379,8 @@ class mapsController extends Controller
     }
     // phsingledevices----------------------------------------------------------------------------
     public function getphvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = 'this is not the actual http request address or value';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
@@ -397,8 +395,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -458,7 +456,7 @@ class mapsController extends Controller
     public function getTemperatureofPHhistoricalvalue(Request $request)
     {
         // Encode clientId and secret in Base64 format
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
+        $clientId = 'this is not the actual http request address or value';
         $clientSecret = 'this is not the actual http request address';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
@@ -540,7 +538,7 @@ class mapsController extends Controller
 
 
     public function getTemperatureofPHvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
+        $clientId = 'this is not the actual http request address or value';
         $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
@@ -746,7 +744,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = 'this is not the actual http request address or value';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
@@ -836,7 +834,7 @@ class mapsController extends Controller
             // Define the request body parameters for sensor data
             $sensorBody = [
                 'userId' => $data['userId'], // Extracted from the response
-                'sensorId' => this is not the actual http request address or value, // Replace with the actual sensor ID
+                'sensorId' => 'this is not the actual http request address or value', // Replace with the actual sensor ID
             ];
             // Make the GET request to fetch single sensor data
             $sensorResponse = Http::withHeaders($sensorHeaders)->post($sensorUrl, $sensorBody);
@@ -876,12 +874,12 @@ class mapsController extends Controller
     // Temperature of TDS-----------------------------------start
 
     public function getTemperatureofTDSvalue(Request $request){
-        $clientId = '757c27c0bac14d3992a553daadc0b918';
-        $clientSecret = '33e1a21a636448b7a12b887c59b79a87';
+        $clientId = 'this is not the actual http request address or value';
+        $clientSecret = 'this is not the actual http request address or value';
         $base64ClientIdSecret = base64_encode("$clientId:$clientSecret");
 
         // Define the API endpoint to obtain access token
-        $url = 'https://app.dtuip.com/oauth/token';
+        $url = 'this is not the actual http request address or value';
 
         // Define the request headers
         $headers = [
@@ -892,8 +890,8 @@ class mapsController extends Controller
         // Define the request body for password grant type
         $body = [
             'grant_type' => 'password',
-            'username' => 'Smart Water Infrastructure Management',
-            'password' => 'swim1234',
+            'username' => 'this is not the actual http request address or value',
+            'password' => 'this is not the actual http request address or value',
         ];
 
         // Make the request to obtain access token
@@ -910,7 +908,7 @@ class mapsController extends Controller
             $clientId = $data['clientId']; // Note: it's 'client_id' in the response
             
             // Define the API endpoint to fetch single sensor data
-            $sensorUrl = 'https://app.dtuip.com/api/device/getSingleSensorDatas';
+            $sensorUrl = 'this is not the actual http request address or value';
 
             // Define the request headers for sensor data
             $sensorHeaders = [
